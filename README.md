@@ -42,7 +42,7 @@ Happy Hours based on their location.
     + Input form
     + Mapped output
   
-##TECHNOLOGIES  
+## TECHNOLOGIES  
 + Node.js and Express
 + React
 + SQL, Postgres
