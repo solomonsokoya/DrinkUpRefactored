@@ -1,4 +1,4 @@
-
+\c drinkup
 
 
 INSERT INTO users (username, email, password, pic_url)
