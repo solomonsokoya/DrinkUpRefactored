@@ -19,7 +19,8 @@ Now that they have cocktails on the brain the user has the option to search for 
 Happy Hours based on their location.
 
 ## Wireframe
-![](images/wireframe/wireframe.JPG) 
+![](images/wireframe/wireframe01.JPG) 
+![](images/wireframe/wireframe02.JPG) 
 
 ## Pages/Components
 + Landing Page
