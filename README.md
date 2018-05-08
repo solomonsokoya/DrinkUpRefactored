@@ -19,7 +19,8 @@ Now that they have cocktails on the brain the user has the option to search for 
 Happy Hours based on their location.
 
 ## Wireframe
-Located in wireframe folder.
+[Link][images/wireframe/wireframe.JPG] 
+
 ## Pages/Components
 + Landing Page
 + User Register Page
@@ -42,6 +43,9 @@ Located in wireframe folder.
     + Input form
     + Mapped output
   
+## TABLES  
+![](images/tables/tables.png)  
+
 ## TECHNOLOGIES  
 + Node.js and Express
 + React
