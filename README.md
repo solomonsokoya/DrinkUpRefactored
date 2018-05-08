@@ -19,7 +19,7 @@ Now that they have cocktails on the brain the user has the option to search for 
 Happy Hours based on their location.
 
 ## Wireframe
-
+Located in wireframe folder.
 ## Pages/Components
 + Landing Page
 + User Register Page
