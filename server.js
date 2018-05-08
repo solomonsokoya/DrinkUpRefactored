@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-  res.send('Hey team DrinkUp!');
+  res.send('Hey Team DrinkUp!');
 })
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
