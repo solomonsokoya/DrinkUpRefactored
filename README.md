@@ -1,7 +1,6 @@
 # DrinkUp
 
-##USER STORY
-
+## overview
 So you are starting to notice that you like gin cocktails but you have no idea 
 what goes in your favorite cocktail, OR maybe you want to try other gin based cocktails
 but don't know their official names.  Here is where this app will improve your life.    
@@ -17,8 +16,17 @@ cocktails to their "favorites" list.  They can create a custom cocktail to store
 favorites, delete from their favorites or edit cocktails within their favorites.  
   
 Now that they have cocktails on the brain the user has the option to search for nearby 
-Happy Hours based on their location.   
-  
-##WIREFRAMES  
+Happy Hours based on their location.
+
+## Wireframe
+
+## Components
+- Landing Page
+- User login page
+- Home page
+- Brand select page
+- Brand's player select page
+- Player page
+
   
 ##TECHNOLOGIES  
