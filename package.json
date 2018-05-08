@@ -1,0 +1,27 @@
+{
+  "name": "drinkup",
+  "version": "1.0.0",
+  "description": "## overview So you are starting to notice that you like gin cocktails but you have no idea  what goes in your favorite cocktail, OR maybe you want to try other gin based cocktails but don't know their official names.  Here is where this app will improve your life.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sboozy/DrinkUp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sboozy/DrinkUp/issues"
+  },
+  "homepage": "https://github.com/sboozy/DrinkUp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.4"
+  }
+}
