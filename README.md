@@ -20,7 +20,7 @@ Happy Hours based on their location.
 
 ## Wireframe
 ![](images/wireframe/wireframe01.JPG) 
-![](images/wireframe/wireframe02.JPG) 
+![](images/wireframe/wireframe02.jpg) 
 
 ## Pages/Components
 + Landing Page
