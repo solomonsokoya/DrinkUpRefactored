@@ -20,13 +20,36 @@ Happy Hours based on their location.
 
 ## Wireframe
 
-## Components
-- Landing Page
-- User login page
-- Home page
-- Brand select page
-- Brand's player select page
-- Player page
-
+## Pages/Components
++ Landing Page
++ User Register Page
++ User Login Page
++ Choose Find Drink or Find Happy Hour
++ Find Drink
+    + Nav Bar
+    + Search Bar
+    + Drink Output List
++ My Fav Drinks
+    + Nav Bar
+    + Profile
+    + Fav Drink List
++ Make A Drink/Edit a Drink
+    + Nav Bar
+    + Make Drink Empty Form
+    + Edit Drink filled out Form
++ Happy Hour
+    + Nav Bar
+    + Input form
+    + Mapped output
   
 ##TECHNOLOGIES  
++ Node.js and Express
++ React
++ SQL, Postgres
++ HTML, CSS, Javascript, jQuery
+
+#### API FETCHES
++ Search By Category Alcoholic
+    + https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
++ Search by drink ID
+    + https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15346
