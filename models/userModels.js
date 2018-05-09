@@ -5,6 +5,7 @@ const saltRounds = 10
 
 //Take the authorization attempt(email, password) and then hash the password
 function registerUser(authorization){
+  if (!authorization.image_url) authorization.image_url = "https://rpgamer.com/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg";
   return bcrypt.hash(authorization.password, saltRounds)
   .then(hash => {
     const newUser = {
@@ -18,7 +19,7 @@ function registerUser(authorization){
     return queryPromise = db.one(`
     INSERT INTO users (username, email, password, pic_url)
     VALUES ($/username/, $/email/, $/password/, $/pic_url/)
-    RETURING *
+    RETURNING *
      `, newUser)
   });
 }
