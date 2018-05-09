@@ -1,12 +1,14 @@
 const db = require('../config/connection');
 
-//get all fav drinks
-function getAll() {
+//this gets all fav drinks for one user
+function getMatch(id) {
 return querypromise = db.any(`
   SELECT *
   FROM favorites
-  `
-  )
+  JOIN users
+  ON users.id = favorites.user_id
+  WHERE users.id = $1
+  `)
 }
 
 //get one favorited drink
