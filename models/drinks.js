@@ -23,7 +23,7 @@ function getOne(id) {
 
 //create a favorite drink
 function create(drink) {
-  if (!image_url) image_url = "http://need-an-icon-here";
+  if (!drink.image_url) drink.image_url = "https://cdn3.iconfinder.com/data/icons/glypho-travel/64/drinks-martini-and-wine-512.png";
   return querypromise = db.one(`
     INSERT INTO favorites (drink_name, image_url, ingredients, instructions, user_id)
     VALUES ($/drink_name/, $/image_url/, $/ingredients/, $/instructions/, $/user_id)
