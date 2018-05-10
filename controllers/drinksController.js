@@ -46,7 +46,7 @@ function destroy(req, res, next) {
 }
 
 module.exports = {
-  getMatch,
+  getAll,
   getOne,
   create,
   update,
