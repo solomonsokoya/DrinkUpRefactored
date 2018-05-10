@@ -1,7 +1,7 @@
 const drinkDb = require('../models/drinks');
 
 //getAll fav drinks for one user
-function getMatch(req, res, next) {
+function getAll(req, res, next) {
   drinkDb.getMatch(req.params.id)
     .then(data => {
       res.locals.drinks = data;
