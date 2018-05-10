@@ -52,7 +52,7 @@ function destroy(drink_id){
 
 
 module.exports = {
-  getAll,
+  getMatch,
   getOne,
   create,
   update,
