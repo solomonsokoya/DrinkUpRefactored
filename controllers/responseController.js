@@ -1,7 +1,7 @@
 function sendOkResponse(req, res) {
   res.json({
     status: 'ok',
-    data: res.locals.quote || res.locals.quotes
+    data: res.locals.drink || res.locals.drinks || res.locals.user || res.locals.users
   })
 }
 

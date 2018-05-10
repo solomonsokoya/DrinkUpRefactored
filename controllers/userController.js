@@ -3,7 +3,7 @@ const userDb = require('../models/userModels');
 function getAllUsers(req, res, next) {
   userDb.getAllUsers()
   .then(data => {
-    rees.locals.users = data;
+    res.locals.users = data;
     next();
   })
   .catch(next);
@@ -19,6 +19,8 @@ function getOneUser(req, res, next) {
 }
 
 function updateUser(req, res, next) {
+  req.body.id = req.params.id
+  console.log(req.body)
   userDb.updateUser(req.body)
   .then(data => {
     res.locals.user = data;
