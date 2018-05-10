@@ -9,7 +9,7 @@ function receiveToken(req, res, next) {
 };
 
 function register(req, res) {
-  userModel.register(req.body)
+  userModel.registerUser(req.body)
     .catch(err => res.status(401).json({
       message: 'Username taken'
     }))
@@ -37,7 +37,7 @@ function restrict(req, res, next) {
   }
 
 function login(req, res, next) {
-  userModel.login(req.body)
+  userModel.loginUser(req.body)
     .catch(err => res.status(401).json({
       status: 'Error',
       message: 'Invalid credentails'

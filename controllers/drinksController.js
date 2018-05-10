@@ -20,6 +20,7 @@ function getOne(req, res, next) {
 }
 
 function create(req, res, next) {
+  req.body.user_id = req.params.id
   drinkDb.create(req.body)
   .then(data => {
     res.locals.drink = data;
@@ -29,6 +30,8 @@ function create(req, res, next) {
 }
 
 function update(req, res, next) {
+  req.body.drink_id = req.params.id
+  console.log(req.body)
   drinkDb.update(req.body)
   .then(data => {
     res.locals.drink = data;
