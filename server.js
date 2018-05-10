@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
-const authController = require('./controllers/authController')
+const authController = require('./controllers/authControllers')
 
 const usersRouter = require('./router/userRouter')
 const drinksRouter = require('./router/drinkRouter')
