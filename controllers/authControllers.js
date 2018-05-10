@@ -1,4 +1,5 @@
-const userModel = require('../models/drinks.js');
+const tokenService = require('../services/tokenService.js');
+const userModel = require('../models/usersModels.js');
 
 function receiveToken(req, res, next) {
   if (req.headers.authorization) {
