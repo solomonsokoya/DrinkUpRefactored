@@ -1,9 +1,5 @@
 const userDb = require('../models/userModels');
 
-
-
-
-
 function getAllUsers(req, res, next) {
   userDb.getAllUsers()
   .then(data => {

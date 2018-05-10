@@ -1,8 +1,8 @@
 const usersRouter = require('express').Router();
-const usersController = require('../controllers/usersController');
+const usersController = require('../controllers/userController');
 
 
-userRouter.route('/profile/:id')
+usersRouter.route('/profile/:id')
   .get(
     usersController.getOne,
     responseController.sendOkResponse,
