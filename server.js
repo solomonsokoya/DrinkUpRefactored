@@ -1,15 +1,14 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-<<<<<<< HEAD
 
+const authController = require('./controllers/authController')
 
-=======
 const usersRouter = require('./router/userRouter')
 const drinksRouter = require('./router/drinkRouter')
 const authRouter = require('./router/authRouter')
 
->>>>>>> origin/routers
+
 const app = express();
 
 const PORT = process.env.PORT || 3009;
