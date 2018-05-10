@@ -1,8 +1,15 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 
-const authController = require('./controllers/authController')
+
+=======
+const usersRouter = require('./router/userRouter')
+const drinksRouter = require('./router/drinkRouter')
+const authRouter = require('./router/authRouter')
+
+>>>>>>> origin/routers
 const app = express();
 
 const PORT = process.env.PORT || 3009;
@@ -15,5 +22,10 @@ app.use(authController.receiveToken);
 app.get('/', (req, res) => {
   res.send('Hey Team DrinkUp!');
 })
+
+app.use('/users', usersRouter);
+app.use('/drinks', drinksRouter);
+app.use('/auth', authRouter)
+
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
