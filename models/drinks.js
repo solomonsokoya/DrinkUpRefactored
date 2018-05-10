@@ -3,12 +3,12 @@ const db = require('../config/connection');
 //this gets all fav drinks for one user
 function getMatch(id) {
 return querypromise = db.any(`
-  SELECT *
+  SELECT drink_id, drink_name, image_url, ingredients, instructions, user_id, id, username, email, pic_url
   FROM favorites
   JOIN users
   ON users.id = favorites.user_id
   WHERE users.id = $1
-  `)
+  `,id)
 }
 
 //get one favorited drink
@@ -33,7 +33,7 @@ function create(drink) {
 }
 
 //update one drink
-function update(drink_id){
+function update(drink){
   return querypromise = db.one(`
     UPDATE favorites
     SET drink_name = $/drink_name/, image_url = $/image_url/, ingredients = $/ingredients/, user_id = $/user_id/, instructions = $/instructions/
