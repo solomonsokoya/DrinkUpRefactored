@@ -1,8 +1,9 @@
 const drinksRouter = require('express').Router();
 const drinksController = require('../controllers/drinksController');
+const responseController = require('../controllers/responseController');
 
 drinksRouter.route('/')
-  get(
+  .get(
     drinksController.getAll,
     responseController.sendOkResponse,
     responseController.sendErrorResponse

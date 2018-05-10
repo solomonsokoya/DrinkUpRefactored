@@ -1,27 +1,23 @@
 const usersRouter = require('express').Router();
 const usersController = require('../controllers/userController');
+const responseController = require('../controllers/responseController');
 
 
 usersRouter.route('/profile/:id')
-  .get(
-    usersController.getOne,
+.get(
+    usersController.getOneUser,
     responseController.sendOkResponse,
     responseController.sendErrorResponse
   )
   .put(
-    usersController.update,
+    usersController.updateUser,
     responseController.sendOkResponse,
     responseController.sendErrorResponse
   )
   .delete(
-    usersController.destroy,
+    usersController.deleteUser,
     responseController.sendOkResponse,
     responseController.sendErrorResponse
   )
-  .post(
-    usersController.create,
-    responseController.sendOkResponse,
-    responseController.sendErrorResponse
-  );
 
-module.exports = userRouter
+module.exports = usersRouter

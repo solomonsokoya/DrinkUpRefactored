@@ -1,5 +1,5 @@
 const tokenService = require('../services/tokenService.js');
-const userModel = require('../models/usersModels.js');
+const userModel = require('../models/userModels.js');
 
 function receiveToken(req, res, next) {
   if (req.headers.authorization) {
