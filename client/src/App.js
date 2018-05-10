@@ -3,6 +3,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
+import Home from './components/Home';
 
 import './App.css';
 
@@ -20,12 +21,11 @@ class App extends Component {
           <div>
             <main>
             <Switch>
+              <Route exact path= "/" component= {Home} />
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Register}/>
             </Switch>
             </main>
-            <button className='Login'><Link to ='/login'>Login</Link></button>
-            <button className='Register'><Link to='/register'>Register</Link></button>
           </div>
           )
       } else {
@@ -42,3 +42,5 @@ class App extends Component {
 }
 
 export default App;
+ // <button className='Login'><Link to ='/login'>Login</Link></button>
+ // <button className='Register'><Link to='/register'>Register</Link></button>
