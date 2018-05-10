@@ -19,5 +19,10 @@ usersRouter.route('/profile/:id')
     responseController.sendOkResponse,
     responseController.sendErrorResponse
   )
-
+usersRouter.route('/profile')
+  .get(
+    usersController.getAllUsers,
+    responseController.sendOkResponse,
+    responseController.sendErrorResponse
+    )
 module.exports = usersRouter

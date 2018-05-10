@@ -68,7 +68,7 @@ function updateUser(user){
     UPDATE users
     SET username = $/username/, email = $/email/, password = $/password/, pic_url= $/pic_url/
     WHERE id = $/id/
-    RETURING *`, user);
+    RETURNING *`, user);
 }
 
 //Delete a user from database
