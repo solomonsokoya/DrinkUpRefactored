@@ -8,24 +8,28 @@ const responseController = require('../controllers/responseController');
 //     responseController.sendOkResponse,
 //     responseController.sendErrorResponse
 //   )
-//   .post(
-//     drinksController.create,
-//     responseController.sendOkResponse,
-//     responseController.sendErrorResponse
-//   );
 
-drinksRouter.route('/:id')
+
+//Gets all Drinks for one user
+drinksRouter.route('/user/:id')
   .get(
     drinksController.getAll,
     responseController.sendOkResponse,
     responseController.sendErrorResponse
-  )
+  ).post(
+    drinksController.create,
+    responseController.sendOkResponse,
+    responseController.sendErrorResponse
+  );
+
+
+//Updates individual drink and deletes drink
+drinksRouter.route('/drink/:id')
   .put(
     drinksController.update,
     responseController.sendOkResponse,
     responseController.sendErrorResponse
-  )
-  .delete(
+  ).delete(
     drinksController.destroy,
     responseController.sendOkResponse,
     responseController.sendErrorResponse
