@@ -1,32 +1,27 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 class RegisterForm extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-         redirectHome: false,
-         users: Object.assign({
-         username: '',
-         password: '',
-         email: '',
-         pic_url: ''
-         }, props.intinalValue)
-        };
+            this.state = {
+             username: '',
+             password: '',
+             email: '',
+             pic_url: ''
+             }
+
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+        };
 
 
     handleInputChange(e) {
         const {name, value} = e.target;
-        this.setState((prevState, props) => ({
-            users:{
-                ...prevState.users,
-                [name]: value
-            }
-        }))
+        this.setState({
+            [name]: value
+        })
     }
 
     handleSubmit(e) {
@@ -41,17 +36,15 @@ class RegisterForm extends Component {
     }
 
     render() {
-        const {id, username, email, password, pic_url } = this.state.users
         return (
-            <form onSubmit={(e) => this.handleSubmit(e)} className={id ? 'edit' : 'create'}>
-            {this.state.redirectHome && <Redirect to='/Register' />}
-            {!id && <h1>Create Account</h1>}
+            <form onSubmit={this.handleSubmit}>
+            <h1>Create Account</h1>
             <label>
                 <h3>User Name</h3>
                 <textarea
                 type='text'
                 name='username'
-                value={username}
+                value={this.state.username}
                 onChange={this.handleInputChange}
                 />
                 </label>
@@ -59,7 +52,7 @@ class RegisterForm extends Component {
                     <h3>Email</h3>
                     <textarea
                     type='text'
-                    name='Email'
+                    name='email'
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     />
@@ -68,22 +61,21 @@ class RegisterForm extends Component {
                     <h3>Password</h3>
                     <textarea
                     type='text'
-                    name='Password'
+                    name='password'
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     />
                     </label>
                     <label>
-                    <h3>Pic Url</h3>
+                    <h3>Pic URL</h3>
                     <textarea
                     type='text'
-                    name='Pic URL'
+                    name='pic_url'
                     value={this.state.pic_url}
                     onChange={this.handleInputChange}
-
                     />
                     </label>
-                    <button type='submit'><Link to= '/login'> REGISTER </Link></button>
+                    <button type='submit'>REGISTER</button>
                     </form>
         )
     }
