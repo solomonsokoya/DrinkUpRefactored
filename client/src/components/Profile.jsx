@@ -9,22 +9,24 @@ export default class Profile extends Component {
       username: '',
       pic_url: ''
     }
-
   }
 
   componentDidMount() {
     if (this.props.user) {
-      this.setState({
-        id: this.props.user.id,
-        username: this.props.user.username,
-        pic_url: this.props.user.pic_url
-      })
+      this.setState((prevState, props) =>({
+        id: this.props.user.currentUser.id,
+        username: this.props.user.currentUser.username,
+        pic_url: this.props.user.currentUser.pic_url
+      }))
     }
   }
   render() {
+    console.log("this is state--->" + this.state.username)
+
     return (
       <div>
-        <h2>Profile Name: {this.props.user.username}</h2>
+      hello
+        <h2>Profile Name: {this.state.username}</h2>
       </div>
       )
 

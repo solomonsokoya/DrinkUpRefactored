@@ -116,9 +116,10 @@ handleRegister(attempt) {
           )
       } else {
 
-      View = ( <div className="App">
-        <Profile/>
-      </div>
+      View = (
+        <div>
+        <Profile user={this.state}/>
+        </div>
       )
     };
 
