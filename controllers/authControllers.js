@@ -15,6 +15,8 @@ function register(req, res) {
     }))
     .then(data => tokenService.makeToken({
         email: data.email,
+        username: data.username,
+        pic_url: data.pic_url,
         id: data.id
     }))
     .then(token => {
@@ -43,8 +45,10 @@ function login(req, res, next) {
       message: 'Invalid credentails'
     }))
     .then(data => tokenService.makeToken({
-      id: data.id,
-      email: data.email
+      email: data.email,
+      username: data.username,
+      pic_url: data.pic_url,
+      id: data.id
     }))
     .then(token => {
       res.json({
