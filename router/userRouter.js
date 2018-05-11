@@ -1,7 +1,7 @@
 const usersRouter = require('express').Router();
 const usersController = require('../controllers/userController');
 const responseController = require('../controllers/responseController');
-
+const authController = require('../controllers/authControllers');
 
 usersRouter.route('/profile/:id')
 .get(
@@ -25,4 +25,5 @@ usersRouter.route('/profile')
     responseController.sendOkResponse,
     responseController.sendErrorResponse
     )
+
 module.exports = usersRouter
