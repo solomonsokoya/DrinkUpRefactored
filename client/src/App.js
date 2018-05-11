@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import jwt from 'jwt-js';
-import Register from './components/Register';
+import Register from './components/RegisterForm';
 import Profile from './components/Profile';
 import Home from './components/Home';
 
@@ -15,7 +15,7 @@ class App extends Component {
       currentUser: null
     }
     this.handleLogin = this.handleLogin.bind(this);
-
+    this.handleRegister = this.handleRegister.bind(this);
   }
   componentDidMount(){
   this.checkToken();
@@ -50,7 +50,6 @@ checkToken() {
 
   loginRequest(attempt) {
     console.log('attempting to log in with attempt:');
-    console.log(attempt);
     fetch('/auth/login', {
       method: 'POST',
       body: JSON.stringify(attempt),
@@ -59,7 +58,6 @@ checkToken() {
       }
     })
     .then(resp => {
-      console.log(resp)
         if (!resp.ok) throw new Error(resp.statusMessage);
         return resp.json();
       })
@@ -76,6 +74,31 @@ handleLogin(attempt){
   this.loginRequest(attempt)
 }
 
+registerRequest(attempt) {
+    console.log('attempting to REGISTER');
+    fetch('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(attempt),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(resp => {
+      if (!resp.ok) throw new Error(resp.statusMessage);
+      console.log("this is ---->" + resp)
+      return resp.json();
+    })
+    .then(respBody => {
+      localStorage.setItem('authToken', respBody.token)
+      this.setState({
+        currentUser: jwt.decodeToken(respBody.token).payload
+      })
+    })
+}
+
+handleRegister(attempt) {
+  this.registerRequest(attempt);
+}
 
   render() {
     let View;
@@ -86,7 +109,7 @@ handleLogin(attempt){
             <Switch>
               <Route exact path= "/" component= {Home} />
               <Route path="/login" component={() => (<Login onLogin = {this.handleLogin}/>)}/>
-              <Route path="/register" component={() => (<Register onLogin = {this.handleRegister}/>)}/>
+              <Route path="/register" component={() => (<Register onSubmit = {this.handleRegister}/>)}/>
             </Switch>
             </main>
           </div>

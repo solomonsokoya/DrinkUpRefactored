@@ -26,7 +26,7 @@ class RegisterForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.props.onSubmit(this.state.username);
+        this.props.onSubmit(this.state);
         this.setState({
             username: '',
             password: '',
@@ -41,7 +41,7 @@ class RegisterForm extends Component {
             <h1>Create Account</h1>
             <label>
                 <h3>User Name</h3>
-                <textarea
+                <input
                 type='text'
                 name='username'
                 value={this.state.username}
@@ -50,7 +50,7 @@ class RegisterForm extends Component {
                 </label>
                 <label>
                     <h3>Email</h3>
-                    <textarea
+                    <input
                     type='text'
                     name='email'
                     value={this.state.email}
@@ -59,8 +59,8 @@ class RegisterForm extends Component {
                     </label>
                     <label>
                     <h3>Password</h3>
-                    <textarea
-                    type='text'
+                    <input
+                    type='password'
                     name='password'
                     value={this.state.password}
                     onChange={this.handleInputChange}
@@ -68,7 +68,7 @@ class RegisterForm extends Component {
                     </label>
                     <label>
                     <h3>Pic URL</h3>
-                    <textarea
+                    <input
                     type='text'
                     name='pic_url'
                     value={this.state.pic_url}
