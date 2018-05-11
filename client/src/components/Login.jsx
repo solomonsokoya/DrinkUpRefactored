@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 
 export default class Login extends Component {
 constructor(props) {
@@ -6,14 +7,15 @@ constructor(props) {
   this.state = {
     username:'',
     password: ''
-
   };
+  this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleInputChange = this.handleInputChange.bind(this);
 }
 
 handleInputChange(e) {
-  const { username, value } = e.target;
+  const { name, value } = e.target;
   this.setState({
-    [username]: value,
+    [name]: value
   });
 }
 

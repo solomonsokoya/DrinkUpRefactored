@@ -1,7 +1,7 @@
 const authRouter = require('express').Router();
 const authController = require('../controllers/authControllers');
 
-ar.get('/', authController.restrict, (req, res) => res.json({
+authRouter.get('/', authController.restrict, (req, res) => res.json({
     user: res.locals.user
   }));
 
