@@ -80,9 +80,15 @@ componentDidMount(){
           <div>
             <main>
             <Switch>
+<<<<<<< HEAD
               <Route exact path= "/" component= {Home} />
               <Route path="/login" component={() => (<Login onLogin = {this.handleLogin}/>)}/>
               <Route path="/register" component={() => (<Register onLogin = {this.handleRegister}/>)}/>
+=======
+              <Route exact path= "/" component={Home} />)}
+              <Route path="/login" render={() => (<Login onSubmit={this.handleSubmit}/>)
+              <Route path="/register" component={Register}/>
+>>>>>>> billyviews
             </Switch>
             </main>
           </div>
