@@ -62,7 +62,7 @@ checkToken() {
         return resp.json();
       })
       .then(respBody => {
-        console.log(respBody + 'hi');
+        console.log(respBody);
         localStorage.setItem('authToken', respBody.token)
         this.setState({
           currentUser: jwt.decodeToken(respBody.token).payload

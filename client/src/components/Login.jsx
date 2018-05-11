@@ -30,8 +30,6 @@ handleSubmit(e) {
 
 
   render() {
-console.log('3')
-
     return (
 
       <form onSubmit={this.handleSubmit}>
