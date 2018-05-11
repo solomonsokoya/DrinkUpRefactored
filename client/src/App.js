@@ -17,6 +17,9 @@ class App extends Component {
     this.handleLogin = this.handleLogin.bind(this);
 
   }
+  componentDidMount(){
+  this.checkToken();
+}
 
 checkToken() {
     const authToken = localStorage.getItem('authToken');
@@ -54,10 +57,9 @@ checkToken() {
       headers: {
         'content-type': 'application/json'
       }
-    }).then(date =>{
-      console.log(date + 'hello')
     })
-      .then(resp => {
+    .then(resp => {
+      console.log(resp)
         if (!resp.ok) throw new Error(resp.statusMessage);
         return resp.json();
       })
@@ -73,9 +75,7 @@ checkToken() {
 handleLogin(attempt){
   this.loginRequest(attempt)
 }
-componentDidMount(){
-  this.checkToken();
-}
+
 
   render() {
     let View;
