@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import jwt from 'jwt-js';
 import Register from './components/Register';
@@ -14,6 +14,8 @@ class App extends Component {
     this.state = {
       currentUser: null
     }
+    this.handleLogin = this.handleLogin.bind(this);
+
   }
 
 checkToken() {
@@ -52,13 +54,15 @@ checkToken() {
       headers: {
         'content-type': 'application/json'
       }
+    }).then(date =>{
+      console.log(date + 'hello')
     })
       .then(resp => {
         if (!resp.ok) throw new Error(resp.statusMessage);
         return resp.json();
       })
       .then(respBody => {
-        console.log(respBody);
+        console.log(respBody + 'hi');
         localStorage.setItem('authToken', respBody.token)
         this.setState({
           currentUser: jwt.decodeToken(respBody.token).payload
@@ -80,15 +84,9 @@ componentDidMount(){
           <div>
             <main>
             <Switch>
-<<<<<<< HEAD
               <Route exact path= "/" component= {Home} />
               <Route path="/login" component={() => (<Login onLogin = {this.handleLogin}/>)}/>
               <Route path="/register" component={() => (<Register onLogin = {this.handleRegister}/>)}/>
-=======
-              <Route exact path= "/" component={Home} />)}
-              <Route path="/login" render={() => (<Login onSubmit={this.handleSubmit}/>)
-              <Route path="/register" component={Register}/>
->>>>>>> billyviews
             </Switch>
             </main>
           </div>
