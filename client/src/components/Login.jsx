@@ -5,7 +5,7 @@ export default class Login extends Component {
 constructor(props) {
   super(props);
   this.state = {
-    username:'',
+    email:'',
     password: ''
   };
   this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,23 +23,25 @@ handleSubmit(e) {
   e.preventDefault();
   this.props.onLogin(this.state);
   this.setState({
-    username: '',
+    email: '',
     password: ''
   });
 }
 
 
   render() {
+console.log('3')
+
     return (
 
       <form onSubmit={this.handleSubmit}>
       <label>
-      Username:
+      Email:
       <input
       type='text'
       onChange={this.handleInputChange}
-      value={this.state.username}
-      name='username'
+      value={this.state.email}
+      name='email'
       />
       </label>
 

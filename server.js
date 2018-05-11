@@ -22,9 +22,10 @@ app.get('/', (req, res) => {
   res.send('Hey Team DrinkUp!');
 })
 
+app.use('/auth', authRouter)
 app.use('/users', usersRouter);
 app.use('/drinks', drinksRouter);
-app.use('/auth', authRouter)
+
 
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
