@@ -21,8 +21,8 @@ class App extends Component {
           <div>
             <main>
             <Switch>
-              <Route exact path= "/" component= {Home} />
-              <Route path="/login" component={Login}/>
+              <Route exact path= "/" component={Home} />)}
+              <Route path="/login" render={() => (<Login onSubmit={this.handleSubmit}/>)
               <Route path="/register" component={Register}/>
             </Switch>
             </main>
