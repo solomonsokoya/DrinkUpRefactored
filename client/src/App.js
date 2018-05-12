@@ -6,6 +6,7 @@ import Register from './components/RegisterForm';
 import Profile from './components/Profile';
 import Home from './components/Home';
 import DrinksApi from './components/DrinksApi';
+import EditDrink from './components/EditDrink';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
     this.fetchDrinks = this.fetchDrinks.bind(this);
+    this.handleEditDrink = this.handleEditDrink.bind(this);
   }
 
   checkToken() {
@@ -115,6 +117,12 @@ class App extends Component {
     this.registerRequest(attempt);
   }
 
+  handleEditDrink(drink) {
+    this.setState({
+      drink: drink
+    })
+  }
+
   componentDidMount(){
     this.checkToken();
     this.fetchDrinks();
@@ -139,15 +147,14 @@ class App extends Component {
       View = (
         <div>
         <Switch>
-          <Route exact path="/" component={() => (<Profile user={this.state}/>)}/>
+          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink}/>)}/>
           <Route path='/drinks' component={() =>(<DrinksApi drinks= {this.state.drinkFromApi}/>)}/>
+          <Route path="/edit/:id" component={() => (<EditDrink drink={this.state.drink}/>)}/>
         </Switch>
         </div>
       )
     };
-
     return (View);
-
   }
 }
 
