@@ -47,7 +47,10 @@ export default class Profile extends Component {
       return (
         <div>
         <Nav/>
-        <h2>Profile Name: {this.state.username}</h2>
+
+        <h1>Welcome {this.state.username}</h1>
+        <img src={this.state.pic_url} alt="profile-pic" style={{width:"15%"}}/>
+        <h2>Your Favorite Drinks are....</h2>
         {this.state.drinks ? <FavDrinks drinks={this.state.drinks.data} /> : <p>Loading</p> }
       </div>
       )
