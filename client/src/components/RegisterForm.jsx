@@ -37,8 +37,11 @@ class RegisterForm extends Component {
 
     render() {
         return (
+            <div className='registerCont'>
             <form onSubmit={this.handleSubmit}>
             <h1>Create Account</h1>
+
+            <div className='registerLabelOne'>
             <label>
                 <h3>User Name</h3>
                 <input
@@ -48,6 +51,9 @@ class RegisterForm extends Component {
                 onChange={this.handleInputChange}
                 />
                 </label>
+                </div>
+
+                <div className='registerLabelTwo'>
                 <label>
                     <h3>Email</h3>
                     <input
@@ -57,6 +63,9 @@ class RegisterForm extends Component {
                     onChange={this.handleInputChange}
                     />
                     </label>
+                    </div>
+
+                    <div className='registerLabelThree'>
                     <label>
                     <h3>Password</h3>
                     <input
@@ -66,6 +75,9 @@ class RegisterForm extends Component {
                     onChange={this.handleInputChange}
                     />
                     </label>
+                    </div>
+
+                    <div className='registerLabelFour'>
                     <label>
                     <h3>Pic URL</h3>
                     <input
@@ -75,8 +87,14 @@ class RegisterForm extends Component {
                     onChange={this.handleInputChange}
                     />
                     </label>
+                    </div>
+
+                    <div className='registerButton'>
                     <button type='submit'>REGISTER</button>
+                    </div>
+
                     </form>
+                    </div>
         )
     }
 }

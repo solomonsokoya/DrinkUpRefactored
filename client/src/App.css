@@ -51,6 +51,16 @@
 
 /*REGISTER PAGE CSS BEGINS*/
 
+.registerCont {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+
+}
 
 
 
