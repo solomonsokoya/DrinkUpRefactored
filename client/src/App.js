@@ -62,7 +62,6 @@ checkToken() {
         return resp.json();
       })
       .then(respBody => {
-        console.log(respBody);
         localStorage.setItem('authToken', respBody.token)
         this.setState({
           currentUser: jwt.decodeToken(respBody.token).payload
@@ -85,7 +84,6 @@ registerRequest(attempt) {
     })
     .then(resp => {
       if (!resp.ok) throw new Error(resp.statusMessage);
-      console.log("this is ---->" + resp)
       return resp.json();
     })
     .then(respBody => {
