@@ -23,7 +23,15 @@
 /*  flex: wrap;*/
 }
 
+.inputLogin {
+  border-radius: 6px;
+  height: 20px;
+}
 
+.inputLoginTwo {
+  border-radius: 6px;
+  height: 20px;
+}
 
 
 
