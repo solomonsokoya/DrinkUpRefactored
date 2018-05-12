@@ -5,7 +5,7 @@ import jwt from 'jwt-js';
 import Register from './components/RegisterForm';
 import Profile from './components/Profile';
 import Home from './components/Home';
-import Drinks from './components/Drinks';
+import DrinksApi from './components/DrinksApi';
 
 import './App.css';
 
@@ -66,6 +66,7 @@ class App extends Component {
         this.setState({
           currentUser: jwt.decodeToken(respBody.token).payload
         })
+        window.location.href = '/';
       })
     }
 
@@ -87,6 +88,7 @@ class App extends Component {
       this.setState({
         currentUser: jwt.decodeToken(respBody.token).payload
       })
+      window.location.href = '/';
     })
   }
 
@@ -126,7 +128,6 @@ class App extends Component {
             <main>
             <Switch>
               <Route exact path= "/" component= {Home} />
-              <Route path='/drinks' component={() =>(<Drinks drinks= {this.state.drinkFromApi}/>)}/>
               <Route path="/login" component={() => (<Login onLogin = {this.handleLogin}/>)}/>
               <Route path="/register" component={() => (<Register onSubmit = {this.handleRegister}/>)}/>
             </Switch>
@@ -137,7 +138,10 @@ class App extends Component {
 
       View = (
         <div>
-        <Profile user={this.state}/>
+        <Switch>
+          <Route exact path="/" component={() => (<Profile user={this.state}/>)}/>
+          <Route path='/drinks' component={() =>(<DrinksApi drinks= {this.state.drinkFromApi}/>)}/>
+        </Switch>
         </div>
       )
     };
@@ -148,5 +152,3 @@ class App extends Component {
 }
 
 export default App;
- // <button className='Login'><Link to ='/login'>Login</Link></button>
- // <button className='Register'><Link to='/register'>Register</Link></button>

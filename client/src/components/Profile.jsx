@@ -46,7 +46,7 @@ export default class Profile extends Component {
     if(this.state.id){
       return (
         <div>
-        <Nav/>
+
         <h2>Profile Name: {this.state.username}</h2>
         {this.state.drinks ? <FavDrinks drinks={this.state.drinks.data} /> : <p>Loading</p> }
       </div>
