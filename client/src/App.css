@@ -1,4 +1,4 @@
-
+/*LOGIN PAGE CSS BEGINS*/
 
 .loginContainer {
   display: flex;
@@ -35,7 +35,28 @@
   height: 20px;
 }
 
+.loginLabelOne {
 
+}
+
+.loginLabelTwo {
+  padding-top: 20px;
+}
+
+.formButton {
+  padding-top: 15px;
+}
+
+/*LOGIN PAGE CSS ENDS*/
+
+/*REGISTER PAGE CSS BEGINS*/
+
+
+
+
+
+
+/*REGISTER PAGE CSS ENDS*/
 
 
 
