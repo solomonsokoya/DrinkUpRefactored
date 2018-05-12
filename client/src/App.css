@@ -62,7 +62,30 @@
 
 }
 
+.regInputOne {
+  border-radius: 6px;
+  height: 20px;
 
+}
+
+.regInputTwo {
+  border-radius: 6px;
+  height: 20px;
+}
+
+.regInputThree {
+  border-radius: 6px;
+  height: 20px;
+}
+
+.regInputFour {
+  border-radius: 6px;
+  height: 20px;
+}
+
+.registerButton {
+  padding-top: 15px;
+}
 
 
 

@@ -44,7 +44,7 @@ class RegisterForm extends Component {
             <div className='registerLabelOne'>
             <label>
                 <h3>User Name</h3>
-                <input
+                <input className='regInputOne'
                 type='text'
                 name='username'
                 value={this.state.username}
@@ -56,7 +56,7 @@ class RegisterForm extends Component {
                 <div className='registerLabelTwo'>
                 <label>
                     <h3>Email</h3>
-                    <input
+                    <input className='regInputTwo'
                     type='text'
                     name='email'
                     value={this.state.email}
@@ -68,7 +68,7 @@ class RegisterForm extends Component {
                     <div className='registerLabelThree'>
                     <label>
                     <h3>Password</h3>
-                    <input
+                    <input className='regInputThree'
                     type='password'
                     name='password'
                     value={this.state.password}
@@ -80,7 +80,7 @@ class RegisterForm extends Component {
                     <div className='registerLabelFour'>
                     <label>
                     <h3>Pic URL</h3>
-                    <input
+                    <input className='regInputFour'
                     type='text'
                     name='pic_url'
                     value={this.state.pic_url}
