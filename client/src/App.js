@@ -5,6 +5,7 @@ import jwt from 'jwt-js';
 import Register from './components/RegisterForm';
 import Profile from './components/Profile';
 import Home from './components/Home';
+import Drinks from './components/Drinks';
 
 import './App.css';
 
@@ -12,16 +13,15 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      currentUser: null
+      currentUser: null,
+      drinkFromApi:''
     }
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
+    this.fetchDrinks = this.fetchDrinks.bind(this);
   }
-  componentDidMount(){
-  this.checkToken();
-}
 
-checkToken() {
+  checkToken() {
     const authToken = localStorage.getItem('authToken');
     fetch('/auth', {
       method: 'GET',
@@ -67,13 +67,9 @@ checkToken() {
           currentUser: jwt.decodeToken(respBody.token).payload
         })
       })
-  }
+    }
 
-handleLogin(attempt){
-  this.loginRequest(attempt)
-}
-
-registerRequest(attempt) {
+  registerRequest(attempt) {
     console.log('attempting to REGISTER');
     fetch('/auth/register', {
       method: 'POST',
@@ -92,11 +88,35 @@ registerRequest(attempt) {
         currentUser: jwt.decodeToken(respBody.token).payload
       })
     })
-}
+  }
 
-handleRegister(attempt) {
-  this.registerRequest(attempt);
-}
+  fetchDrinks(){
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+    .then(resp =>{
+      return resp.json()
+    })
+    .then(respBody =>{
+      this.setState({
+        drinkFromApi: respBody
+      })
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
+
+  handleLogin(attempt){
+    this.loginRequest(attempt)
+  }
+
+  handleRegister(attempt) {
+    this.registerRequest(attempt);
+  }
+
+  componentDidMount(){
+    this.checkToken();
+    this.fetchDrinks();
+  }
 
   render() {
     let View;
@@ -106,6 +126,7 @@ handleRegister(attempt) {
             <main>
             <Switch>
               <Route exact path= "/" component= {Home} />
+              <Route path='/drinks' component={() =>(<Drinks drinks= {this.state.drinkFromApi}/>)}/>
               <Route path="/login" component={() => (<Login onLogin = {this.handleLogin}/>)}/>
               <Route path="/register" component={() => (<Register onSubmit = {this.handleRegister}/>)}/>
             </Switch>
