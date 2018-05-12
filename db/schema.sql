@@ -7,16 +7,16 @@ CREATE TABLE users
 (
 
   id SERIAL PRIMARY KEY,
-  username TEXT UNIQUE,
-  email VARCHAR (300),
-  password VARCHAR (300),
+  username TEXT,
+  email VARCHAR (300) UNIQUE NOT NULL,
+  password VARCHAR (300) NOT NULL,
   pic_url TEXT
 );
 
 CREATE TABLE favorites
 (
   drink_id SERIAL PRIMARY KEY,
-  drink_name TEXT,
+  drink_name TEXT NOT NULL,
   image_url TEXT,
   ingredients TEXT,
   instructions TEXT,
