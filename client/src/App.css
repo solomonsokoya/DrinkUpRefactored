@@ -1,4 +1,38 @@
-.App {
+
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+}
+
+.loginForm {
+  /*display: flex;*/
+  /*text-align: center;*/
+
+}
+
+.formButton {
+
+ /* display: flex;*/
+  /*justify-content: center;*/
+/*  flex: wrap;*/
+}
+
+
+
+
+
+
+
+
+
+
+/*.App {
   text-align: center;
 }
 
@@ -25,4 +59,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/

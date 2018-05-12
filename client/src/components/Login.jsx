@@ -31,11 +31,16 @@ handleSubmit(e) {
 
   render() {
     return (
+      <div className='loginContainer'>
 
-      <form onSubmit={this.handleSubmit}>
+      <div className='loginText'>
+      <h1>I am the login page</h1>
+      </div>
+
+      <form className='loginForm'onSubmit={this.handleSubmit}>
       <label>
       Email:
-      <input
+      <input className='inputLogin'
       type='text'
       onChange={this.handleInputChange}
       value={this.state.email}
@@ -45,19 +50,25 @@ handleSubmit(e) {
 
       <label>
       Password:
-      <input
+      <input className='inputLoginTwo'
       type='password'
       onChange={this.handleInputChange}
       value= {this.state.password}
       name='password'
       />
       </label>
-      <button type='submit'> LOGIN </button>
+      <div className='formButton'>
+      <button type='submit'>LOGIN</button>
+      </div>
 
       <div>
-      <h1>I am the login page</h1>
+
       </div>
+
+
       </form>
+      </div>
+
        );
   }
 }
