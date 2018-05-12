@@ -38,7 +38,9 @@ handleSubmit(e) {
       </div>
 
       <form className='loginForm'onSubmit={this.handleSubmit}>
-      <label>
+
+      <div>
+      <label className='loginLabelOne'>
       Email:
       <input className='inputLogin'
       type='text'
@@ -48,6 +50,8 @@ handleSubmit(e) {
       />
       </label>
 
+      </div>
+      <div className='loginLabelTwo'>
       <label>
       Password:
       <input className='inputLoginTwo'
@@ -57,6 +61,8 @@ handleSubmit(e) {
       name='password'
       />
       </label>
+      </div>
+
       <div className='formButton'>
       <button type='submit'>LOGIN</button>
       </div>
