@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Route, Router, Link, Redirect, withRouter } from 'react-router-dom';
+import EditDrink from './EditDrink';
 
 const drinkImg = {
   width: "20%"
@@ -17,6 +19,13 @@ class FavDrinks extends Component {
     this.state= {
       isLoaded: false
     }
+    this.handleEditRoute = this.handleEditRoute.bind(this);
+  }
+
+  handleEditRoute(drink) {
+    this.props.handleEditDrink(drink);
+
+    this.props.history.push(`/edit/${drink.drink_id}`)
   }
 
   render() {
@@ -24,7 +33,8 @@ class FavDrinks extends Component {
       return (this.props.drinks.map(drink => (
       <div key={drink.drink_id} style={drinkContainer}>
         <img src={drink.image_url} alt="" style={drinkImg}/>
-        <button>EDIT DRINK</button>
+        <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
+
         <h3>{drink.drink_name}</h3>
         <h4>{drink.ingredients}</h4>
         <h4>{drink.instructions}</h4>
@@ -36,4 +46,6 @@ class FavDrinks extends Component {
   }
 }
 
-export default FavDrinks;
+export default withRouter(FavDrinks);
+        // <button><Link to={`/edit/${drink.drink_id}`}>EDIT DRINK</Link></button>
+        // <Route path={`/edit/${drink.drink_id}`} drink={drink}/>

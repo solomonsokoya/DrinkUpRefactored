@@ -5,6 +5,7 @@ import jwt from 'jwt-js';
 import Register from './components/RegisterForm';
 import Profile from './components/Profile';
 import Home from './components/Home';
+import EditDrink from './components/EditDrink';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ class App extends Component {
     }
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
+    this.handleEditDrink = this.handleEditDrink.bind(this);
   }
   componentDidMount(){
   this.checkToken();
@@ -98,6 +100,12 @@ handleRegister(attempt) {
   this.registerRequest(attempt);
 }
 
+handleEditDrink(drink) {
+  this.setState({
+    drink: drink
+  })
+}
+
   render() {
     let View;
     if(this.state.currentUser === null){
@@ -116,7 +124,10 @@ handleRegister(attempt) {
 
       View = (
         <div>
-        <Profile user={this.state}/>
+        <Switch>
+          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink}/>)}/>
+          <Route path="/edit/:id" component={() => (<EditDrink drink={this.state.drink}/>)}/>
+        </Switch>
         </div>
       )
     };
