@@ -91,6 +91,34 @@
 
 /*REGISTER PAGE CSS ENDS*/
 
+/*HOME PAGE CSS BEGINS*/
+
+.homeCont {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+
+}
+
+.linkCont {
+  text-align: center;
+  display: inline-flex;
+
+}
+
+.loginLink {
+  padding-right: 10px;
+  textDecoration: none;
+}
+
+
+
+/*HOME PAGE CSS ENDS*/
+
 
 
 
