@@ -46,21 +46,13 @@ export default class Profile extends Component {
     if(this.state.id){
       return (
         <div>
-<<<<<<< HEAD
-
-        <h2>Profile Name: {this.state.username}</h2>
-        {this.state.drinks ? <FavDrinks drinks={this.state.drinks.data} /> : <p>Loading</p> }
-=======
         <Nav/>
-
         <h1>Welcome {this.state.username}</h1>
         <img src={this.state.pic_url} alt="profile-pic" style={{width:"15%"}}/>
         <h2>Your Favorite Drinks are....</h2>
         {this.state.drinks ? <FavDrinks drinks={this.state.drinks.data} handleEditDrink={this.props.handleEditDrink}/> : <p>Loading</p> }
->>>>>>> editDrink
       </div>
       )
-
     } else {
      return(
       <div>
