@@ -8,14 +8,39 @@
   flex-wrap: wrap;
   text-align: center;
   margin: auto;
+  position: relative;
 }
 
 .loginForm {
-  margin: auto;
+  margin-top: 80px;
+  padding-top: 100px;
+  justify-content: center;
+  /*margin: auto;*/
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  position: relative;
+  box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);
+  border-radius: 6px;
+
 
   /*display: flex;*/
   /*text-align: center;*/
 
+}
+
+.loginText {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.loginImage {
+  opacity: .7;
+  position: absolute;
+  z-index: -1000;
+  box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);
+  border-radius: 6px;
 }
 
 .formButton {
@@ -28,24 +53,31 @@
 .inputLogin {
   border-radius: 6px;
   height: 20px;
+  margin-left: 10px;
 }
 
 .inputLoginTwo {
   border-radius: 6px;
   height: 20px;
+  margin-left: 10px;
 }
 
 .loginLabelOne {
-
+font-size: 30px;
+font-weight: bold;
 }
 
 .loginLabelTwo {
+  font-size: 30px;
   padding-top: 20px;
+  font-weight: bold;
 }
 
 .formButton {
-  padding-top: 15px;
+  padding-top: 30px;
+
 }
+
 
 /*LOGIN PAGE CSS ENDS*/
 
