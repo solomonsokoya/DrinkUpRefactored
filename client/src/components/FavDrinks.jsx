@@ -25,18 +25,4 @@ class FavDrinks extends Component {
 }
 
 
-// {this.props.drinks.map(drink => (
-//       <div key={drink.drink_id}>
-//       <h1>
-//       {drink.drink_name}
-//       </h1>
-
-//       <h2>
-//       {drink.ingredients}
-//       </h2>
-//       </div>
-
-//       )
-//       )}
-
 export default FavDrinks;
