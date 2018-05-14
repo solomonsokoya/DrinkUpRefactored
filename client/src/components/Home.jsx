@@ -18,7 +18,7 @@ export default class Home extends Component {
       </div>
 
       <div className='registerLink'>
-      <h3 className='Register'><Link to='/register' style={{ textDecoration: 'none' }}> Register </Link></h3>
+      <h2 className='Register'><Link to='/register' style={{ textDecoration: 'none' }}> Register </Link></h2>
       </div>
       </div>
 

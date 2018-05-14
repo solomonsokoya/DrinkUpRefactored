@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import {Redirect} from 'react-router-dom';
-var FontAwesome = require('react-fontawesome');
+import flatiron from './cssImages/flatirondistrict.jpg';
+
 
 export default class Login extends Component {
 constructor(props) {
@@ -32,12 +33,18 @@ handleSubmit(e) {
 
   render() {
     return (
+
       <div className='loginContainer'>
 
       <div className='loginText'>
-      <h1>I am the login page</h1>
+      <h1> LOGIN </h1>
       </div>
 
+      <div className='loginImage'>
+      <img src= {flatiron} />
+      </div>
+
+      <div className= 'loginFormContainer'>
       <form className='loginForm'onSubmit={this.handleSubmit}>
 
       <div>
@@ -67,20 +74,14 @@ handleSubmit(e) {
 
       <div className='formButton'>
       <button type='submit'>LOGIN</button>
-      <FontAwesome
-      className='fas fa-sign-in-alt'
-      size='5x'
-      />
-      </div>
-
-      <div>
 
       </div>
-
-
       </form>
-      </div>
 
-       );
+    </div>
+    </div>
+
+
+  );
   }
 }
