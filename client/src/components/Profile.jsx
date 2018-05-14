@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import FavDrinks from './FavDrinks';
 import Nav from './Nav.jsx'
+import EditDrink from './EditDrink';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -10,24 +12,8 @@ export default class Profile extends Component {
       id: '',
       username: '',
       pic_url: '',
-      drinks:false
+      drinks: ''
     }
-    this.fetchFavDrinks= this.fetchFavDrinks.bind(this)
-  }
-
-  fetchFavDrinks() {
-    fetch(`/drinks/user/${this.props.user.currentUser.id}`)
-    .then(resp => {
-      if(!resp.ok) throw new Error(resp.statusMessage)
-        return resp.json()
-    })
-    .then(respBody =>
-      this.setState ({
-        drinks: respBody
-      }))
-    .catch(err => {
-      console.log('no drinks fetch');
-    })
   }
 
   componentDidMount() {
@@ -39,10 +25,11 @@ export default class Profile extends Component {
         pic_url: pic_url
       })
     }
-    this.fetchFavDrinks();
+    this.props.fetchFavDrinks();
   }
 
   render() {
+    console.log(this.props.userDrinks)
     if(this.state.id){
       return (
         <div>
@@ -50,7 +37,8 @@ export default class Profile extends Component {
         <h1>Welcome {this.state.username}</h1>
         <img src={this.state.pic_url} alt="profile-pic" style={{width:"15%"}}/>
         <h2>Your Favorite Drinks are....</h2>
-        {this.state.drinks ? <FavDrinks drinks={this.state.drinks.data} handleEditDrink={this.props.handleEditDrink}/> : <p>Loading</p> }
+        {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink}/> : <p>Loading</p> }
+
       </div>
       )
     } else {
@@ -62,3 +50,4 @@ export default class Profile extends Component {
     }
   }
 }
+        // <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>

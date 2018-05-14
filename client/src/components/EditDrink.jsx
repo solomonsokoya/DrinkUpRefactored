@@ -17,7 +17,7 @@ export default class EditDrink extends Component {
       instructions:'',
       image_url:'',
       user_id:''
-    }, props.initialValue)  //not sure we need props.initialValue
+    }, props.initialValue)
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,7 +41,6 @@ export default class EditDrink extends Component {
       redirectProfile: true
     })
   }
-
 
   render() {
 
