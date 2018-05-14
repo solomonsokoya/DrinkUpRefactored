@@ -93,6 +93,14 @@
 
 /*HOME PAGE CSS BEGINS*/
 
+.homeImage {
+  /*width: 100vw;
+  height: 100vh;*/
+  z-index: 1;
+  position:;
+
+}
+
 .homeCont {
   display: flex;
   justify-content: center;
@@ -107,12 +115,12 @@
 .linkCont {
   text-align: center;
   display: inline-flex;
+  position:;
 
 }
 
 .loginLink {
   padding-right: 10px;
-  textDecoration: none;
 }
 
 
