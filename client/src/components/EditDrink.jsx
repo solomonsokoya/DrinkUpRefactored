@@ -17,7 +17,7 @@ export default class EditDrink extends Component {
       instructions:'',
       image_url:'',
       user_id:''
-    }, props.initialValue)
+    }, props.initialValue)  //not sure we need props.initialValue
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
