@@ -12,7 +12,6 @@ const drinkContainer ={
   margin: "20px"
 }
 
-
 class FavDrinks extends Component {
   constructor(props) {
     super(props);
@@ -29,10 +28,11 @@ class FavDrinks extends Component {
   }
 
   render() {
-    if(this.props.drinks !== 0){
+    if(this.props.drinks){
       return (this.props.drinks.map(drink => (
       <div key={drink.drink_id} style={drinkContainer}>
         <img src={drink.image_url} alt="" style={drinkImg}/>
+
         <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
 
         <h3>{drink.drink_name}</h3>
@@ -47,5 +47,3 @@ class FavDrinks extends Component {
 }
 
 export default withRouter(FavDrinks);
-        // <button><Link to={`/edit/${drink.drink_id}`}>EDIT DRINK</Link></button>
-        // <Route path={`/edit/${drink.drink_id}`} drink={drink}/>

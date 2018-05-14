@@ -8,6 +8,7 @@ return querypromise = db.any(`
   JOIN users
   ON users.id = favorites.user_id
   WHERE users.id = $1
+  ORDER BY drink_name ASC
   `,id)
 }
 

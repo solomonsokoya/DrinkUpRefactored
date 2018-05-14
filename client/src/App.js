@@ -15,12 +15,16 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: null,
-      drinkFromApi:''
+      drinkFromApi:'',
+      drinks: false
     }
+
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
     this.fetchDrinks = this.fetchDrinks.bind(this);
-    this.handleEditDrink = this.handleEditDrink.bind(this);
+    this.fetchFavDrinks= this.fetchFavDrinks.bind(this)
+    this.handleEditDrink = this.handleEditDrink.bind(this);  //sends props to editDrink form
+    this.updateDrink = this.updateDrink.bind(this)  // takes new values on Submit
   }
 
   checkToken() {
@@ -117,10 +121,40 @@ class App extends Component {
     this.registerRequest(attempt);
   }
 
+  fetchFavDrinks() {
+    fetch(`/drinks/user/${this.state.currentUser.id}`)
+    .then(resp => {
+      if(!resp.ok) throw new Error(resp.statusMessage)
+        return resp.json()
+    })
+    .then(respBody =>
+      this.setState ({
+        drinks: respBody.data
+      }))
+    .catch(err => {
+      console.log('not fetching drinks');
+    })
+  }
+
   handleEditDrink(drink) {
     this.setState({
       drink: drink
     })
+  }
+
+  updateDrink(drink) {
+    return fetch(`/drinks/drink/${drink.drink_id}`, {
+      method: 'PUT',
+      body: JSON.stringify(drink),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(resp => {
+      if (!resp.ok) throw new Error(resp.statusMessage);
+      return resp.json();
+    }).then(
+      () => this.fetchFavDrinks()
+    )
   }
 
   componentDidMount(){
@@ -147,9 +181,9 @@ class App extends Component {
       View = (
         <div>
         <Switch>
-          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink}/>)}/>
+          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks}/>)}/>
           <Route path='/drinks' component={() =>(<DrinksApi drinks= {this.state.drinkFromApi}/>)}/>
-          <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink}/>)}/>
+          <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>
         </Switch>
         </div>
       )
