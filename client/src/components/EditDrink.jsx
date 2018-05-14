@@ -44,7 +44,7 @@ export default class EditDrink extends Component {
 
   render() {
 
-    const {drink_id, drink_name, ingredients, instructions, image_url } = this.state.drink;
+    const { drink_name, ingredients, instructions, image_url } = this.state.drink;
     return(
       <form onSubmit={this.handleSubmit}>
         {this.state.redirectProfile && <Redirect to='/'/>}
