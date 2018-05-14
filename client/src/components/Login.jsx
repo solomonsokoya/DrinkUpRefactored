@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import {Redirect} from 'react-router-dom';
-import flatiron from './cssImages/flatirondistrict.jpg';
+import strawberry from './cssImages/strawberry.jpg';
 
 
 export default class Login extends Component {
@@ -41,11 +41,11 @@ handleSubmit(e) {
       </div>
 
       <div className='loginImage'>
-      <img src= {flatiron} />
+      <img src= {strawberry} />
       </div>
 
       <div className= 'loginFormContainer'>
-      <form className='loginForm'onSubmit={this.handleSubmit}>
+      <form className='loginForm' onSubmit={this.handleSubmit}>
 
       <div className='loginLabelOne'>
       <label>

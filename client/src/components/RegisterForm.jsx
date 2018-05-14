@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import { Redirect } from 'react-router-dom';
+import empire from './cssImages/empirestate.jpg';
 
 
 class RegisterForm extends Component {
@@ -38,8 +39,15 @@ class RegisterForm extends Component {
     render() {
         return (
             <div className='registerCont'>
-            <form onSubmit={this.handleSubmit}>
-            <h1>Create Account</h1>
+            <div>
+            <h1> REGISTER </h1>
+            </div>
+
+            <form  className='regForm'onSubmit={this.handleSubmit}>
+
+            <div className='registerImage'>
+            <img src= {empire} />
+            </div>
 
             <div className='registerLabelOne'>
             <label>
