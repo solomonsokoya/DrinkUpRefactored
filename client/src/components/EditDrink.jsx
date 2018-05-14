@@ -25,7 +25,7 @@ export default class EditDrink extends Component {
 
   handleInputChange(e) {
     const {name, value} = e.target;
-    console.log(name, value)
+    console.log(name, value);
     this.setState((prevState, props) => ({
       drink: {
         ...prevState.drink,
@@ -44,8 +44,8 @@ export default class EditDrink extends Component {
 
 
   render() {
-    console.log(this.props)
-    const { drink_id, drink_name, ingredients, instructions, image_url } = this.props.drink;
+
+    const {drink_id, drink_name, ingredients, instructions, image_url } = this.state.drink;
     return(
       <form onSubmit={this.handleSubmit}>
         {this.state.redirectProfile && <Redirect to='/'/>}
