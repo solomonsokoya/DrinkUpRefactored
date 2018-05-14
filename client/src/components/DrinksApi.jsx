@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav.jsx';
 import { findDOMNode } from 'react-dom';
-import $ from 'jquery';
 
 
 class DrinksFromApi extends Component{

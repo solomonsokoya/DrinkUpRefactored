@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 const drinkImage = {
   width:"15%"
@@ -18,6 +19,27 @@ export default class EditDrink extends Component {
       user_id:''
     }, props.initialValue)
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInputChange(e) {
+    const {name, value} = e.target;
+    console.log(name, value)
+    this.setState((prevState, props) => ({
+      drink: {
+        ...prevState.drink,
+        [name]: value
+      }
+    }))
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.onSubmit(this.state.drink);
+    this.setState({
+      redirectProfile: true
+    })
   }
 
 
@@ -25,13 +47,15 @@ export default class EditDrink extends Component {
     console.log(this.props)
     const { drink_id, drink_name, ingredients, instructions, image_url } = this.props.drink;
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
+        {this.state.redirectProfile && <Redirect to='/'/>}
         <label>
           <h3>Cocktail:</h3>
           <input
             type='text'
             name='drink_name'
             value={drink_name}
+            onChange={this.handleInputChange}
           />
         </label>
         <label>
@@ -40,6 +64,7 @@ export default class EditDrink extends Component {
             name='ingredients'
             value={ingredients}
             rows='6'
+            onChange={this.handleInputChange}
           />
         </label>
         <label>
@@ -48,6 +73,7 @@ export default class EditDrink extends Component {
             name='instructions'
             value={instructions}
             rows='8'
+            onChange={this.handleInputChange}
           />
         </label>
         <label>
@@ -56,12 +82,15 @@ export default class EditDrink extends Component {
             type='url'
             name='image_url'
             value={image_url}
+            onChange={this.handleInputChange}
           />
         </label>
         <br />
         <img src={image_url} alt="" style={drinkImage}/>
         <br />
         <button type='submit'>SUBMIT</button>
+        <br />
+        <Link to='/'>CANCEL</Link>
       </form>
       )
   }

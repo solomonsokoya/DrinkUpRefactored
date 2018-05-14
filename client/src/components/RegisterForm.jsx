@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-
 
 class RegisterForm extends Component {
     constructor(props) {
