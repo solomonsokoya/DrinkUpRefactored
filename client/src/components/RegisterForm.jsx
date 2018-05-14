@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Redirect } from 'react-router-dom';
-import empire from './cssImages/empirestate.jpg';
+import lineup from './cssImages/drinklineup.jpg';
 
 
 class RegisterForm extends Component {
@@ -43,11 +43,13 @@ class RegisterForm extends Component {
             <h1> REGISTER </h1>
             </div>
 
+            <div className='registerImage'>
+            <img className='actualRegImage' src= {lineup} />
+            </div>
+
+
             <form  className='regForm'onSubmit={this.handleSubmit}>
 
-            <div className='registerImage'>
-            <img src= {empire} />
-            </div>
 
             <div className='registerLabelOne'>
             <label>
