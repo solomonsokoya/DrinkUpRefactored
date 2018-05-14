@@ -149,7 +149,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink}/>)}/>
           <Route path='/drinks' component={() =>(<DrinksApi drinks= {this.state.drinkFromApi}/>)}/>
-          <Route path="/edit/:id" component={() => (<EditDrink drink={this.state.drink}/>)}/>
+          <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink}/>)}/>
         </Switch>
         </div>
       )
