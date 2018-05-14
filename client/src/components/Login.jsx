@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
+var FontAwesome = require('react-fontawesome');
 
 export default class Login extends Component {
 constructor(props) {
@@ -66,6 +67,10 @@ handleSubmit(e) {
 
       <div className='formButton'>
       <button type='submit'>LOGIN</button>
+      <FontAwesome
+      className='fas fa-sign-in-alt'
+      size='5x'
+      />
       </div>
 
       <div>
