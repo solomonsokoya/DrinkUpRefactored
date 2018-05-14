@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Route, Router, Link, Redirect, withRouter } from 'react-router-dom';
-import EditDrink from './EditDrink';
+import { BrowserRouter as Redirect, withRouter } from 'react-router-dom';
+// import EditDrink from './EditDrink';
 
 const drinkImg = {
   width: "20%"
@@ -38,7 +38,7 @@ class FavDrinks extends Component {
         <h3>{drink.drink_name}</h3>
         <h4>{drink.ingredients}</h4>
         <h4>{drink.instructions}</h4>
-        <button>DELETE DRINK</button>
+        <button onClick={() => this.props.deleteDrink(drink)}>DELETE DRINK</button>
       </div>
     )))} else {
      return (<p>Loading</p>)

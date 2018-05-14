@@ -25,6 +25,7 @@ class App extends Component {
     this.fetchFavDrinks= this.fetchFavDrinks.bind(this)
     this.handleEditDrink = this.handleEditDrink.bind(this);  //sends props to editDrink form
     this.updateDrink = this.updateDrink.bind(this)  // takes new values on Submit
+    this.deleteDrink = this.deleteDrink.bind(this)
   }
 
   checkToken() {
@@ -157,6 +158,20 @@ class App extends Component {
     )
   }
 
+  deleteDrink(drink) {
+    console.log(drink)
+    return fetch(`/drinks/drink/${drink.drink_id}`, {
+      method: 'DELETE',
+    })
+    .then(resp => {
+    if (!resp.ok) throw new Error(resp.statusMessage);
+      return resp.json();
+    })
+    .then (
+      () => this.fetchFavDrinks()
+      )
+  }
+
   componentDidMount(){
     this.checkToken();
     this.fetchDrinks();
@@ -181,7 +196,7 @@ class App extends Component {
       View = (
         <div>
         <Switch>
-          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks}/>)}/>
+          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
           <Route path='/drinks' component={() =>(<DrinksApi drinks= {this.state.drinkFromApi}/>)}/>
           <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>
         </Switch>

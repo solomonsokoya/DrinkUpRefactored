@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
 import FavDrinks from './FavDrinks';
 import Nav from './Nav.jsx'
-import EditDrink from './EditDrink';
+// import EditDrink from './EditDrink';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -29,7 +29,6 @@ export default class Profile extends Component {
   }
 
   render() {
-    console.log(this.props.userDrinks)
     if(this.state.id){
       return (
         <div>
@@ -37,7 +36,7 @@ export default class Profile extends Component {
         <h1>Welcome {this.state.username}</h1>
         <img src={this.state.pic_url} alt="profile-pic" style={{width:"15%"}}/>
         <h2>Your Favorite Drinks are....</h2>
-        {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink}/> : <p>Loading</p> }
+        {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink} deleteDrink={this.props.deleteDrink}/> : <p>Loading</p> }
 
       </div>
       )
