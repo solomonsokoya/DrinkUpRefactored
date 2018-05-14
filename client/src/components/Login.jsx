@@ -47,9 +47,11 @@ handleSubmit(e) {
       <div className= 'loginFormContainer'>
       <form className='loginForm'onSubmit={this.handleSubmit}>
 
+      <div className='loginLabelOne'>
+      <label>
       <div>
-      <label className='loginLabelOne'>
       Email:
+      </div>
       <input className='inputLogin'
       type='text'
       onChange={this.handleInputChange}
@@ -62,7 +64,9 @@ handleSubmit(e) {
 
       <div className='loginLabelTwo'>
       <label>
+      <div>
       Password:
+      </div>
       <input className='inputLoginTwo'
       type='password'
       onChange={this.handleInputChange}
