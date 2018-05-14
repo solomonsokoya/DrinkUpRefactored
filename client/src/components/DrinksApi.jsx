@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav.jsx';
+import DrinkShow from './DrinkShow.jsx';
 import { findDOMNode } from 'react-dom';
 import $ from 'jquery';
 
@@ -8,6 +9,7 @@ class DrinksFromApi extends Component{
   constructor(props){
     super(props)
     this.state ={
+
       drinkMatch: ''
     }
   }
@@ -31,13 +33,20 @@ class DrinksFromApi extends Component{
 
   render(){
     console.log(this.state.drinkMatch)
+    let View;
+    if(this.state.drinkMatch){
+      View =(
+        <DrinkShow drinkMatch ={this.state.drinkMatch}/>
+        )
+    }
+
     return(
 
     <div>
       drinks page
+
       <input type = 'text' id = 'input' onKeyUp = {this.handleSearch.bind(this)}placeholder = 'search drink'></input>
-      <p>{this.state.drinkMatch.strDrink}</p>
-      <img src={this.state.drinkMatch.strDrinkThumb}/>
+      {View}
      </div>
 
     )
