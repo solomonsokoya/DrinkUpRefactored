@@ -18,7 +18,7 @@ class App extends Component {
       drinks: false,
       drinkFromApi:[]
     }
-
+    this.handleCreate = this.handleCreate.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
     this.fetchDrinks = this.fetchDrinks.bind(this);
@@ -120,9 +120,32 @@ class App extends Component {
     this.loginRequest(attempt)
   }
 
+  handleCreate(drink){
+    this.appCreateDrinks(drink)
+  }
+
   handleRegister(attempt) {
     this.registerRequest(attempt);
   }
+
+  appCreateDrinks(drink){
+    console.log('i create')
+    fetch(`/drinks/user/${this.state.currentUser.id}`, {
+      method: 'POST',
+      body: JSON.stringify(drink),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(resp=>{
+      if(!resp.ok) throw new Error(resp.statusMessage);
+      return resp.json();
+    }).then(
+      () => this.fetchFavDrinks()
+
+    )
+  }
+
+
 
   fetchFavDrinks() {
     fetch(`/drinks/user/${this.state.currentUser.id}`)
@@ -199,7 +222,7 @@ class App extends Component {
         <div>
         <Switch>
           <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
-          <Route path='/drinks' component={() =>(<DrinksApi drinks= {this.state.drinkFromApi}/>)}/>
+          <Route path='/drinks' component={() =>(<DrinksApi create = {this.handleCreate} drinks= {this.state.drinkFromApi}/>)}/>
           <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>
         </Switch>
         </div>
