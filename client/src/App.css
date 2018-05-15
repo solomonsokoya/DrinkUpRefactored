@@ -101,6 +101,15 @@ font-weight: bold;
 
 }
 
+.registerTxt {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.labelTxt {
+  font-weight: bold;
+  font-size: 20px;
+}
 
 
 .registerImage{
@@ -110,13 +119,15 @@ font-weight: bold;
   opacity: .7;
   position: absolute;
   z-index: -1000;
-  /*box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);*/
-  border-radius: 6px;
+  box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);
+  border-radius: 10px;
 }
 
 .regForm {
   margin-top: 50px;
-  padding-top: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   justify-content: center;
   margin: auto;
   width: 400px;
