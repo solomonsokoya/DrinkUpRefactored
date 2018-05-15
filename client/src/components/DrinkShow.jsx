@@ -4,7 +4,11 @@ class DrinkShow extends Component{
   constructor(props){
     super(props)
     this.state ={
-      ingredients:''
+      ingredients:'',
+      drink_name:'',
+      instructions:'',
+      image_url:''
+
     }
     this.fetchInfo = this.fetchInfo.bind(this);
   }
@@ -19,10 +23,13 @@ class DrinkShow extends Component{
       const ingredients = [];
       for (const key in drink){
         if(key.includes('Ingredient') && drink[key])
-        ingredients.push(drink[key] + ', ')
+        ingredients.push(drink[key])
       }
       this.setState({
-        ingredients: ingredients
+        ingredients: ingredients.join(),
+        drink_name: drink.strDrink,
+        instructions: drink.strInstructions,
+        image_url: drink.strDrinkThumb
       })
     })
 
@@ -38,9 +45,9 @@ render(){
   return(
 
     <div>
-    <p>-{this.state.ingredients}</p>
+    <p>{this.state.ingredients}</p>
+    <button onClick = {()=> this.props.create(this.state)} >Add Fav Drink</button>
     </div>
-
     )
 }
 
