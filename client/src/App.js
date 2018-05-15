@@ -77,6 +77,8 @@ class App extends Component {
       })
     }
 
+
+
   registerRequest(attempt) {
     console.log('attempting to REGISTER');
     fetch('/auth/register', {
