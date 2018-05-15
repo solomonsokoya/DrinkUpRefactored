@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   checkToken() {
+
     const authToken = localStorage.getItem('authToken');
     fetch('/auth', {
       method: 'GET',
@@ -56,12 +57,14 @@ class App extends Component {
   }
 
   loginRequest(attempt) {
+    const authToken = localStorage.getItem('authToken');
     console.log('attempting to log in with attempt:');
     fetch('/auth/login', {
       method: 'POST',
       body: JSON.stringify(attempt),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
       }
     })
     .then(resp => {
@@ -78,14 +81,15 @@ class App extends Component {
     }
 
 
-
   registerRequest(attempt) {
+    const authToken = localStorage.getItem('authToken');
     console.log('attempting to REGISTER');
     fetch('/auth/register', {
       method: 'POST',
       body: JSON.stringify(attempt),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
       }
     })
     .then(resp => {
@@ -129,12 +133,14 @@ class App extends Component {
   }
 
   appCreateDrinks(drink){
+    const authToken = localStorage.getItem('authToken');
     console.log('i create')
     fetch(`/drinks/user/${this.state.currentUser.id}`, {
       method: 'POST',
       body: JSON.stringify(drink),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
       }
     }).then(resp=>{
       if(!resp.ok) throw new Error(resp.statusMessage);
@@ -148,7 +154,13 @@ class App extends Component {
 
 
   fetchFavDrinks() {
-    fetch(`/drinks/user/${this.state.currentUser.id}`)
+    const authToken = localStorage.getItem('authToken')
+    fetch(`/drinks/user/${this.state.currentUser.id}`,{
+      headers:{
+        'Authorization': `Bearer ${authToken}`,
+
+      }
+    })
     .then(resp => {
       if(!resp.ok) throw new Error(resp.statusMessage)
         return resp.json()
@@ -169,11 +181,13 @@ class App extends Component {
   }
 
   updateDrink(drink) {
+    const authToken = localStorage.getItem('authToken');
     return fetch(`/drinks/drink/${drink.drink_id}`, {
       method: 'PUT',
       body: JSON.stringify(drink),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
       }
     }).then(resp => {
       if (!resp.ok) throw new Error(resp.statusMessage);
