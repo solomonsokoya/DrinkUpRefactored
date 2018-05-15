@@ -27,6 +27,7 @@ function register(req, res) {
 }
 
 function restrict(req, res, next) {
+  console.log(req.authToken)
     tokenService.verify(req.authToken)
       .then(data => {
         res.locals.user = data;
