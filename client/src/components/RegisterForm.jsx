@@ -39,7 +39,7 @@ class RegisterForm extends Component {
     render() {
         return (
             <div className='registerCont'>
-            <div>
+            <div className='registerTxt'>
             <h1> REGISTER </h1>
             </div>
 
@@ -53,7 +53,9 @@ class RegisterForm extends Component {
 
             <div className='registerLabelOne'>
             <label>
+                <div className='labelTxt'>
                 <h3>User Name</h3>
+                </div>
                 <input className='regInputOne'
                 type='text'
                 name='username'
@@ -65,7 +67,9 @@ class RegisterForm extends Component {
 
                 <div className='registerLabelTwo'>
                 <label>
+                    <div className='labelTxt'>
                     <h3>Email</h3>
+                    </div>
                     <input className='regInputTwo'
                     type='text'
                     name='email'
@@ -77,7 +81,9 @@ class RegisterForm extends Component {
 
                     <div className='registerLabelThree'>
                     <label>
+                    <div className='labelTxt'>
                     <h3>Password</h3>
+                    </div>
                     <input className='regInputThree'
                     type='password'
                     name='password'
@@ -89,7 +95,9 @@ class RegisterForm extends Component {
 
                     <div className='registerLabelFour'>
                     <label>
+                    <div className='labelTxt'>
                     <h3>Pic URL</h3>
+                    </div>
                     <input className='regInputFour'
                     type='text'
                     name='pic_url'
