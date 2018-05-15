@@ -16,9 +16,10 @@
 }
 
 .userName {
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
   font-size: 26px;
+  transform: translate(9%, 717%);
 
 }
 
@@ -28,6 +29,7 @@
   background: pink;
   width: 200px;
   height: 200px;
+  box-shadow: 0 0 24px 3px rgba(0, 0, 0, .1);
 }
 
 .userPicCont {
@@ -50,7 +52,7 @@
   margin: auto;
   border: solid 1pt;
   border-radius: 6px;
-  width: 500px;
+  width: 650px;
   height: 500px;
   overflow: scroll;
   box-shadow: 0 0 24px 3px rgba(0, 0, 0, .1);
@@ -58,7 +60,8 @@
 
 .picAndProps {
   display: flex;
-  justify-content: space-around;
+  margin-top: 80px;
+  /*justify-content: space-around;*/
 
 }
 
@@ -82,6 +85,43 @@
 /*PROFILE PAGE CSS ENDS*/
 
 /*FAV DRINK PROFILE starts*/
+
+.favDrinkImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
+}
+
+.favDrinkPost {
+  display: flex;
+  margin: auto;
+  border: 1pt solid;
+  width: 500px;
+  height: 200px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 6px;
+  /*overflow: scroll;*/
+}
+
+.favDrinkDetails {
+  padding-left: 10px;
+  /*display: flex;*/
+}
+
+.editButton {
+  margin-bottom: 10px;
+}
+
+.deleteButton {
+  margin-top: 10px;
+  /*font-size: 50px;*/
+}
+
 
 /*FAV DRINK PROFILE CSS ends*/
 
