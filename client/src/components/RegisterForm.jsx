@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+
 
 
 class RegisterForm extends Component {
@@ -14,7 +14,7 @@ class RegisterForm extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        };
+       };
 
 
     handleInputChange(e) {

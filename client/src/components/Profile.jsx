@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FavDrinks from './FavDrinks';
-import Nav from './Nav.jsx'
+
 
 export default class Profile extends Component {
   constructor(props) {
