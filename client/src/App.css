@@ -20,8 +20,9 @@
   height: 400px;
   background: transparent;
   position: relative;
+  background: rgba(255, 255, 255, .3);
   /*box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);*/
-  box-shadow: 0 0 24px 3px rgba(254, 228, 113, .001);
+  box-shadow: 0 0 24px 3px rgba(255, 185, 183, .1);
   border-radius: 4px;
 
 
@@ -122,6 +123,7 @@ font-weight: bold;
   /*box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);*/
   /*box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);*/
   border-radius: 50px;
+  /*bottom: 0;*/
 }
 
 .regForm {
@@ -134,7 +136,8 @@ font-weight: bold;
   height: 400px;
   background: transparent;
   position: relative;
-  box-shadow: 0 0 24px 3px rgba(233, 130, 116, .001);
+  background: rgba(255, 255, 255, .3);
+  box-shadow: 0 0 24px 3px rgba(233, 130, 116, .1);
   border-radius: 4px;
 
 }
