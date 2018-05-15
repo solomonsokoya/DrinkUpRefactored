@@ -3,6 +3,7 @@ import lineup from './cssImages/drinklineup.jpg';
 
 
 
+
 class RegisterForm extends Component {
     constructor(props) {
         super(props)
@@ -15,7 +16,7 @@ class RegisterForm extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        };
+       };
 
 
     handleInputChange(e) {

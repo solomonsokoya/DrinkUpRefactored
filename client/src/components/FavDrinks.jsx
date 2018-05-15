@@ -47,3 +47,4 @@ class FavDrinks extends Component {
 }
 
 export default withRouter(FavDrinks);
+
