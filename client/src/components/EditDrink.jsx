@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import strawberry from './cssImages/strawstrawberry.jpg'
 
 const drinkImage = {
   width:"15%"
@@ -46,11 +47,14 @@ export default class EditDrink extends Component {
 
     const { drink_name, ingredients, instructions, image_url } = this.state.drink;
     return(
+      <div className='editFormCont'>
       <form onSubmit={this.handleSubmit}>
         {this.state.redirectProfile && <Redirect to='/'/>}
         <label>
+        <div className='labels'>
           <h3>Cocktail:</h3>
-          <input
+        </div>
+          <input className='inputs'
             type='text'
             name='drink_name'
             value={drink_name}
@@ -58,8 +62,10 @@ export default class EditDrink extends Component {
           />
         </label>
         <label>
+        <div className='labels'>
           <h3>Ingredients:</h3>
-          <textarea
+        </div>
+          <textarea className='inputs'
             name='ingredients'
             value={ingredients}
             rows='6'
@@ -67,8 +73,10 @@ export default class EditDrink extends Component {
           />
         </label>
         <label>
+        <div className='labels'>
           <h3>Instructions:</h3>
-          <textarea
+        </div>
+          <textarea className='inputs'
             name='instructions'
             value={instructions}
             rows='8'
@@ -76,8 +84,10 @@ export default class EditDrink extends Component {
           />
         </label>
         <label>
+        <div className='labels'>
           <h3>Url for Drink Image:</h3>
-          <input
+        </div>
+          <input className='inputs'
             type='url'
             name='image_url'
             value={image_url}
@@ -87,10 +97,15 @@ export default class EditDrink extends Component {
         <br />
         <img src={image_url} alt="" style={drinkImage}/>
         <br />
-        <button type='submit'>SUBMIT</button>
-        <br />
-        <Link to='/'>CANCEL</Link>
+        <div className='buttonCont'>
+        <button type='submit' className='submitButton'>SUBMIT</button>
+        <Link to='/' className='cancel'>CANCEL</Link>
+        </div>
       </form>
+      <div className='detailStrawberry'>
+      <img src={strawberry} alt="" className='strawberryImg'/>
+      </div>
+      </div>
       )
   }
 }

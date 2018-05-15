@@ -340,16 +340,73 @@ font-weight: bold;
   position:;
 
 }
-
-.loginLink {
-  padding-right: 10px;
+.registerLink {
+  font-size: 1.5em;
+  transition: all .2s ease-in-out;
 }
 
+.registerLink:hover {
+  transform: scale(1.1);
+}
+
+.pipe {
+  border-right: 2px solid;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+.loginLink {
+  padding-right: 10px;
+  font-size: 1.9em;
+  transition: all .2s ease-in-out;
+}
+
+.loginLink:hover {
+  transform: scale(1.1);
+}
 
 
 /*HOME PAGE CSS ENDS*/
 
+/*EDIT FORM STARTS*/
+.editFormCont {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.labels {
+  font-size: 30px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.inputs {
+  border-radius: 6px;
+  font-size: 1.2em;
+  width: 75%;
+}
+.strawberryImg {
+  height: 85%;
+  padding-bottom: 20px;
+}
 
+.submitButton {
+background: #009430;
+color: #fff;
+border: 1px solid #eee;
+border-radius: 10px;
+box-shadow: 5px 5px 5px #eee;
+font-size: 1.8em;
+padding: 5px;
+margin-top: 10px;
+}
+.butttonCont {
+  display: flex;
+  flex-direction: row;
+}
+.cancel {
+  font-size: 1.8em;
+  margin-left: 150px;
+}
+/*EDIT FORM ENDS*/
 
 
 
