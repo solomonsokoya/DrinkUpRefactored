@@ -14,11 +14,11 @@ export default class Home extends Component {
       </div>
       <div className='linkCont'>
       <div className='loginLink'>
-      <h3 className='Login'><Link to ='/login' style={{ textDecoration: 'none' }}> Login </Link></h3>
+      <h3 className='Login'><Link to ='/login' style={{ textDecoration: 'none' }}> Login  </Link></h3>
       </div>
-
+      <div className='pipe'></div>
       <div className='registerLink'>
-      <h2 className='Register'><Link to='/register' style={{ textDecoration: 'none' }}> Register </Link></h2>
+      <h2 className='Register'><Link to='/register' style={{ textDecoration: 'none' }}>  Register </Link></h2>
       </div>
       </div>
 
