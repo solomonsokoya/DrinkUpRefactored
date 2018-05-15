@@ -1,13 +1,8 @@
 const drinksRouter = require('express').Router();
 const drinksController = require('../controllers/drinksController');
 const responseController = require('../controllers/responseController');
+const authController = require('../controllers/authControllers');
 
-// drinksRouter.route('/')
-//   .get(
-//     drinksController.getAll,
-//     responseController.sendOkResponse,
-//     responseController.sendErrorResponse
-//   )
 
 
 //Gets all Drinks for one user
@@ -30,6 +25,7 @@ drinksRouter.route('/drink/:id')
     responseController.sendOkResponse,
     responseController.sendErrorResponse
   ).delete(
+
     drinksController.destroy,
     responseController.sendOkResponse,
     responseController.sendErrorResponse

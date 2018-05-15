@@ -1,4 +1,8 @@
 /*LOGIN PAGE CSS BEGINS*/
+*{
+  margin: 0;
+  padding: 0;
+}
 
 .loginContainer {
   display: flex;

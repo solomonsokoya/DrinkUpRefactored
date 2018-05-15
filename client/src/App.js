@@ -102,7 +102,7 @@ class App extends Component {
   }
 
   fetchDrinks(){
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
     .then(resp =>{
       return resp.json()
     })
