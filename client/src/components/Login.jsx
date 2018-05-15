@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import strawberry from './cssImages/strawberry.jpg';
 
-
 export default class Login extends Component {
 constructor(props) {
   super(props);

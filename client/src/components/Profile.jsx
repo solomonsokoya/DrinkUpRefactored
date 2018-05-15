@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
 import FavDrinks from './FavDrinks';
 import Nav from './Nav.jsx'
-// import EditDrink from './EditDrink';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -49,4 +47,3 @@ export default class Profile extends Component {
     }
   }
 }
-        // <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>

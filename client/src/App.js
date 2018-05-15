@@ -15,8 +15,8 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: null,
-      drinkFromApi:'',
-      drinks: false
+      drinks: false,
+      drinkFromApi:[]
     }
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -108,7 +108,7 @@ class App extends Component {
     })
     .then(respBody =>{
       this.setState({
-        drinkFromApi: respBody
+        drinkFromApi: respBody.drinks
       })
     })
     .catch(err=>{
