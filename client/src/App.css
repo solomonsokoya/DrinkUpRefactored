@@ -349,11 +349,46 @@ font-weight: bold;
 
 /*HOME PAGE CSS ENDS*/
 
+.grid{
+   height: 100vh;
+    width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+  "Nav Nav Nav Nav Nav Nav Nav"
+  ". . input input input . ."
+  ". . apiDrink apiDrink apiDrink . ."
+  ". . apiDrink apiDrink apiDrink . ."
+  ". . apiDrink apiDrink apiDrink . ."
+}
 
+.input{
+  font-size: 1.0em;
+  text-align: center;
+  grid-area: input;
+  width:15vw;
+  height: 5vh;
+  border-radius: 6px;
+  justify-self: center;
+  align-self: center;
+}
 
-
-
-
+.apiDrink{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: apiDrink;
+  max-width: 50vw;
+  max-height: 120vh;
+  overflow-y:scroll;
+  margin-bottom: 20px;
+}
+.navContainer{
+  grid-area: Nav;
+  max-width: 100vw;
+  max-height: 6vh;
+}
 /*.App {
   text-align: center;
 }
