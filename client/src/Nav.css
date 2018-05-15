@@ -11,5 +11,19 @@ li{
   text-decoration: none;
   color: black;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1.8em;
+}
+
+.navContainer {
+  background-image: url('./components/cssImages/watercolorsplash.jpeg');
+  padding: 15px 0px 10px;
+  border-bottom: 1px grey solid;
+}
+
+li:hover {
+  text-decoration: underline;
+}
+
+.fas {
+  font-size: 1.4em;
 }
