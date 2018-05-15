@@ -33,8 +33,10 @@ class FavDrinks extends Component {
     if(this.props.drinks){
       return (this.props.drinks.map(drink => (
       <div key={drink.drink_id} >
+        <div className='favDrinkPost'>
         <img className='favDrinkImg' src={drink.image_url} alt="" />
 
+        <div className='favDrinkDetails'>
         <div className='editButton'>
         <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
         </div>
@@ -55,6 +57,8 @@ class FavDrinks extends Component {
         <div className='deleteButton'>
 
         <button onClick={() => this.props.deleteDrink(drink)}>DELETE DRINK</button>
+        </div>
+        </div>
         </div>
       </div>
     )))} else {
