@@ -1,22 +1,16 @@
 # DrinkUp
 
-## overview
-So you are starting to notice that you like gin cocktails but you have no idea 
-what goes in your favorite cocktail, OR maybe you want to try other gin based cocktails
-but don't know their official names.  Here is where this app will improve your life.    
+## Overview
+So you realize you are starting to gravitate toward gin cocktails but you have no idea 
+what goes in your favorite cocktail, OR maybe you want to try other gin-based cocktails but don't know their official names.  Here is where this app will improve your life.    
   
-Our app is a database of cocktails including names, images and ingredients. In addition to 
-listing cocktails our app can then help you find a happy hour in your neighborhood.  
-  
-A user goes to our website and is given the option to register if they
+Our app is a database of cocktails including names, images ingredients and instructions. A user can go to our website and is given the option to register if they
 don't currently have an account or if they do have an account they can log right in.  
   
-Once they have logged in they can search for cocktails based on ingredients and add
-cocktails to their "favorites" list.  They can create a custom cocktail to store in their
-favorites, delete from their favorites or edit cocktails within their favorites.  
+Once they have logged in they can search for cocktails and add a
+cocktail to their "favorites" list.  From their "favorites" they can view all their cocktails, edit a cocktail to create a custom cocktail and delete a cocktail from their favorites.    
   
-Now that they have cocktails on the brain the user has the option to search for nearby 
-Happy Hours based on their location.
+Now let's go get a drink!
 
 ## Wireframe
 ![](images/wireframe/wireframe01.JPG) 
@@ -37,24 +31,44 @@ Happy Hours based on their location.
     + Fav Drink List
 + Make A Drink/Edit a Drink
     + Nav Bar
-    + Make Drink Empty Form
     + Edit Drink filled out Form
-+ Happy Hour
-    + Nav Bar
-    + Input form
-    + Mapped output
+
   
 ## TABLES  
 ![](images/tables/tables.png)  
 
 ## TECHNOLOGIES  
-+ Node.js and Express
+
+#### CORE STACK
++ Node.js
++ Express
 + React
-+ SQL, Postgres
-+ HTML, CSS, Javascript, jQuery
++ PostgresSQL
++ HTML
++ CSS
++ Javascript
++ Javascript
++ Heroku
+
+#### MIDDLEWARE
++ nodemon
++ pg-promise
++ react-routers
++ PostgresSQL
++ HTML
++ CSS
 
 #### API FETCHES
 + Search By Category Alcoholic
     + https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
 + Search by drink ID
-    + https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15346
+    + https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15346###Features
+
+#### OTHER
++ Lucidchart (tables/flow)
++ Postman (API and DB testing)
++ Slack (communication)
+
+## See The Project...
+Live Deployment of App: 
+http://LinkWillGoHereXXXXXXXXXX
