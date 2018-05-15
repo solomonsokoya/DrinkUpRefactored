@@ -1,4 +1,218 @@
-.App {
+/*LOGIN PAGE CSS BEGINS*/
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+  position: relative;
+}
+
+.loginForm {
+  margin-top: 50px;
+  padding-top: 80px;
+  justify-content: center;
+  /*margin: auto;*/
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  position: relative;
+  background: rgba(255, 255, 255, .3);
+  /*box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);*/
+  box-shadow: 0 0 24px 3px rgba(255, 185, 183, .1);
+  border-radius: 4px;
+
+
+  /*display: flex;*/
+  /*text-align: center;*/
+
+}
+
+.loginText {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.loginImage {
+  opacity: .7;
+  position: absolute;
+  z-index: -1000;
+  /*box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);*/
+  border-radius: 6px;
+}
+
+.formButton {
+
+ /* display: flex;*/
+  /*justify-content: center;*/
+/*  flex: wrap;*/
+}
+
+.inputLogin {
+  border-radius: 6px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.inputLoginTwo {
+  border-radius: 6px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.loginLabelOne {
+font-size: 30px;
+font-weight: bold;
+}
+
+.loginLabelTwo {
+  font-size: 30px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.formButton {
+  margin-top: 30px;
+  cursor: pointer;
+
+}
+
+
+/*LOGIN PAGE CSS ENDS*/
+
+/*REGISTER PAGE CSS BEGINS*/
+
+.registerCont {
+  /*display: flex;
+  justify-content: center;*/
+  /*width: 400px;
+  height: 400px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+  position: relative;
+
+}
+
+.registerTxt {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.labelTxt {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.registerImage{
+  width: 600px;
+  height: 245px;
+  margin: auto;
+  opacity: .7;
+  position: absolute;
+  z-index: -1000;
+  /*box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);*/
+  /*box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);*/
+  border-radius: 50px;
+  /*bottom: 0;*/
+}
+
+.regForm {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: center;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  position: relative;
+  background: rgba(255, 255, 255, .3);
+  box-shadow: 0 0 24px 3px rgba(233, 130, 116, .1);
+  border-radius: 4px;
+
+}
+
+.regInputOne {
+  border-radius: 6px;
+  height: 20px;
+
+}
+
+.regInputTwo {
+  border-radius: 6px;
+  height: 20px;
+}
+
+.regInputThree {
+  border-radius: 6px;
+  height: 20px;
+}
+
+.regInputFour {
+  border-radius: 6px;
+  height: 20px;
+}
+
+.registerButton {
+  padding-top: 15px;
+}
+
+
+
+/*REGISTER PAGE CSS ENDS*/
+
+/*HOME PAGE CSS BEGINS*/
+
+.homeImage {
+  /*width: 100vw;
+  height: 100vh;*/
+  z-index: 1;
+  opacity: .9;
+
+}
+
+.homeCont {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+
+}
+
+.linkCont {
+  text-align: center;
+  display: inline-flex;
+  position:;
+
+}
+
+.loginLink {
+  padding-right: 10px;
+}
+
+
+
+/*HOME PAGE CSS ENDS*/
+
+
+
+
+
+
+/*.App {
   text-align: center;
 }
 
@@ -25,4 +239,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/
