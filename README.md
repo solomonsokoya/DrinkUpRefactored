@@ -13,8 +13,9 @@ cocktail to their "favorites" list.  From their "favorites" they can view all th
 Now let's go get a drink!
 
 ## Wireframe
-![](images/wireframe/wireframe01.JPG) 
-![](images/wireframe/wireframe02.jpg) 
+![](images/wireframe/wireframe_XD1.jpg) 
+![](images/wireframe/wireframe_XD2.jpg) 
+![](images/wireframe/wireframe_XD3.jpg) 
 
 ## Pages/Components
 + Landing Page
