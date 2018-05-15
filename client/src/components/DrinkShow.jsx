@@ -19,7 +19,7 @@ class DrinkShow extends Component{
       const ingredients = [];
       for (const key in drink){
         if(key.includes('Ingredient') && drink[key])
-        ingredients.push(drink[key])
+        ingredients.push(drink[key] + ', ')
       }
       this.setState({
         ingredients: ingredients
@@ -38,7 +38,7 @@ render(){
   return(
 
     <div>
-    <p>{this.state.ingredients}</p>
+    <p>-{this.state.ingredients}</p>
     </div>
 
     )

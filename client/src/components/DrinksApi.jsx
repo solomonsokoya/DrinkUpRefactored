@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Nav from './Nav.jsx';
+import { Link } from 'react-router-dom';
 import DrinkShow from './DrinkShow.jsx';
 
+const drinkTitle = {
+  fontWeight: 'bold'
+}
 
 class DrinksFromApi extends Component{
   constructor(props){
@@ -29,6 +33,7 @@ class DrinksFromApi extends Component{
 
     return(
       <div>
+      <Nav/>
       <input
       type = 'text'
       id = 'input'
@@ -39,7 +44,7 @@ class DrinksFromApi extends Component{
 
       {filteredDrinks.map(drinkf =>(
         <div key = {drinkf.idDrink}>
-          <div> {drinkf.strDrink}</div>
+          <div style={drinkTitle}><Link to='/'>{drinkf.strDrink}</Link></div>
           <DrinkShow id={drinkf.idDrink}/>
         </div>
       ))}
