@@ -9,7 +9,8 @@ const drinkImg = {
 const drinkContainer ={
   border: "solid 2px black",
   padding: "10px",
-  margin: "20px"
+  margin: "20px",
+  width: "50%"
 }
 
 class FavDrinks extends Component {
@@ -36,8 +37,8 @@ class FavDrinks extends Component {
         <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
 
         <h3>{drink.drink_name}</h3>
-        <h4>{drink.ingredients}</h4>
-        <h4>{drink.instructions}</h4>
+        <h4>Ingredients:  {drink.ingredients}</h4>
+        <h4>Instructions:  {drink.instructions}</h4>
         <button onClick={() => this.props.deleteDrink(drink)}>DELETE DRINK</button>
       </div>
     )))} else {

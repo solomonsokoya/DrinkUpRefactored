@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import Nav from './Nav.jsx';
 import DrinkShow from './DrinkShow.jsx';
 
-const drinkTitle = {
-  fontWeight: 'bold'
+const drinkImg = {
+  width: "20%"
+}
+const drinkContainer ={
+  border: "solid 2px black",
+  padding: "10px",
+  margin: "20px",
+  width: "50%"
 }
 
 class DrinksFromApi extends Component{
@@ -42,8 +48,9 @@ class DrinksFromApi extends Component{
       placeholder = 'search drink'/>
 
       {filteredDrinks.map(drinkf =>(
-        <div key = {drinkf.idDrink}>
-          <div style={drinkTitle}>{drinkf.strDrink}</div>
+        <div key = {drinkf.idDrink} style={drinkContainer}>
+          <img src={drinkf.strDrinkThumb} alt="" style={drinkImg}/>
+          <h3>{drinkf.strDrink}</h3>
           <DrinkShow create={this.props.create} id={drinkf.idDrink}/>
         </div>
       ))}

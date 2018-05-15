@@ -23,7 +23,7 @@ class DrinkShow extends Component{
       const ingredients = [];
       for (const key in drink){
         if(key.includes('Ingredient') && drink[key])
-        ingredients.push(drink[key])
+        ingredients.push(' ' + drink[key])
       }
       this.setState({
         ingredients: ingredients.join(),
@@ -45,7 +45,8 @@ render(){
   return(
 
     <div>
-    <p>{this.state.ingredients}</p>
+    <h4>Ingredients:  {this.state.ingredients}</h4>
+    <h4>Instructions:  {this.state.instructions}</h4>
     <button onClick = {()=> this.props.create(this.state)} >Add Fav Drink</button>
     </div>
     )
