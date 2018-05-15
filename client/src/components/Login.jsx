@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import strawberry from './cssImages/strawberry.jpg';
+
 
 export default class Login extends Component {
 constructor(props) {
@@ -31,10 +33,25 @@ handleSubmit(e) {
   render() {
     return (
 
-      <form onSubmit={this.handleSubmit}>
+      <div className='loginContainer'>
+
+      <div className='loginText'>
+      <h1> LOGIN </h1>
+      </div>
+
+      <div className='loginImage'>
+      <img src= {strawberry} />
+      </div>
+
+      <div className= 'loginFormContainer'>
+      <form className='loginForm' onSubmit={this.handleSubmit}>
+
+      <div className='loginLabelOne'>
       <label>
+      <div>
       Email:
-      <input
+      </div>
+      <input className='inputLogin'
       type='text'
       onChange={this.handleInputChange}
       value={this.state.email}
@@ -42,21 +59,32 @@ handleSubmit(e) {
       />
       </label>
 
+      </div>
+
+      <div className='loginLabelTwo'>
       <label>
+      <div>
       Password:
-      <input
+      </div>
+      <input className='inputLoginTwo'
       type='password'
       onChange={this.handleInputChange}
       value= {this.state.password}
       name='password'
       />
       </label>
-      <button type='submit'> LOGIN </button>
+      </div>
 
-      <div>
-      <h1>I am the login page</h1>
+      <div className='formButton'>
+      <button type='submit'>LOGIN</button>
+
       </div>
       </form>
-       );
+
+    </div>
+    </div>
+
+
+  );
   }
 }

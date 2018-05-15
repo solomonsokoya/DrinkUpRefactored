@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import lineup from './cssImages/drinklineup.jpg';
+
+
 
 class RegisterForm extends Component {
     constructor(props) {
@@ -35,46 +38,81 @@ class RegisterForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-            <h1>Create Account</h1>
+            <div className='registerCont'>
+            <div className='registerTxt'>
+            <h1> REGISTER </h1>
+            </div>
+
+            <div className='registerImage'>
+            <img className='actualRegImage' src= {lineup} />
+            </div>
+
+
+            <form  className='regForm'onSubmit={this.handleSubmit}>
+
+
+            <div className='registerLabelOne'>
             <label>
+                <div className='labelTxt'>
                 <h3>User Name</h3>
-                <input
+                </div>
+                <input className='regInputOne'
                 type='text'
                 name='username'
                 value={this.state.username}
                 onChange={this.handleInputChange}
                 />
                 </label>
+                </div>
+
+                <div className='registerLabelTwo'>
                 <label>
+                    <div className='labelTxt'>
                     <h3>Email</h3>
-                    <input
+                    </div>
+                    <input className='regInputTwo'
                     type='text'
                     name='email'
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     />
                     </label>
+                    </div>
+
+                    <div className='registerLabelThree'>
                     <label>
+                    <div className='labelTxt'>
                     <h3>Password</h3>
-                    <input
+                    </div>
+                    <input className='regInputThree'
                     type='password'
                     name='password'
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     />
                     </label>
+                    </div>
+
+                    <div className='registerLabelFour'>
                     <label>
+                    <div className='labelTxt'>
                     <h3>Pic URL</h3>
-                    <input
+                    </div>
+                    <input className='regInputFour'
                     type='text'
                     name='pic_url'
                     value={this.state.pic_url}
                     onChange={this.handleInputChange}
                     />
                     </label>
+                    </div>
+
+                    <div className='registerButton'>
                     <button type='submit'>REGISTER</button>
+                    </div>
+
                     </form>
+                    </div>
         )
     }
 }
