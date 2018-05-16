@@ -10,7 +10,7 @@ export default class Home extends Component {
       <h1>Welcome to, DRINK UP </h1>
       </div>
       <div className='homeImage'>
-       <img src = {skyLine} />
+       <img src = {skyLine} alt=''/>
       </div>
       <div className='linkCont'>
       <div className='loginLink'>

@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Redirect, withRouter } from 'react-router-dom';
 
-const drinkContainer ={
-  border: "solid 2px black",
-  padding: "10px",
-  margin: "20px",
-  width: "50%"
-}
-
 class FavDrinks extends Component {
   constructor(props) {
     super(props);

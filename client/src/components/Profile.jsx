@@ -57,7 +57,7 @@ export default class Profile extends Component {
         </div>
 
         <div className='detailPic'>
-        <img className='detailImg' src= {marg} />
+        <img className='detailImg' src= {marg} alt=''/>
         </div>
 
       </div>

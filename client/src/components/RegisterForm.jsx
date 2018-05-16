@@ -45,7 +45,7 @@ class RegisterForm extends Component {
             </div>
 
             <div className='registerImage'>
-            <img className='actualRegImage' src= {lineup} />
+            <img className='actualRegImage' src= {lineup} alt=''/>
             </div>
 
 
