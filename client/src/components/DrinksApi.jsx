@@ -8,8 +8,7 @@ const drinkImg = {
 const drinkContainer ={
   border: "solid 2px black",
   padding: "10px",
-  margin: "20px",
-  width: "50%"
+  margin: "20px"
 }
 
 class DrinksFromApi extends Component{
@@ -37,16 +36,18 @@ class DrinksFromApi extends Component{
     })
 
     return(
-      <div>
-      <Nav/>
+      <div className='grid'>
+      <Nav className ='Nav'/>
       <input
       type = 'text'
+      class='input'
       id = 'input'
       name='searchTerm'
       value ={this.state.searchTerm}
       onChange = {this.handleSearch}
-      placeholder = 'search drink'/>
+      placeholder = 'Search Drink'/>
 
+      <div className='apiDrink'>
       {filteredDrinks.map(drinkf =>(
         <div key = {drinkf.idDrink} style={drinkContainer}>
           <img src={drinkf.strDrinkThumb} alt="" style={drinkImg}/>
@@ -54,6 +55,7 @@ class DrinksFromApi extends Component{
           <DrinkShow create={this.props.create} id={drinkf.idDrink}/>
         </div>
       ))}
+      </div>
 
       </div>
       )

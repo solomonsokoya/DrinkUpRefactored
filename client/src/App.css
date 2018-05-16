@@ -408,34 +408,43 @@ margin-top: 10px;
 }
 /*EDIT FORM ENDS*/
 
+.grid{
+   height: 100vh;
+    width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+  "Nav Nav Nav Nav Nav Nav Nav"
+  ". . input input input . ."
+  ". . apiDrink apiDrink apiDrink . ."
+  ". . apiDrink apiDrink apiDrink . ."
+  ". . apiDrink apiDrink apiDrink . ."
+}
 
-
-
-/*.App {
+.input{
+  font-size: 1.0em;
   text-align: center;
+  grid-area: input;
+  width:15vw;
+  height: 5vh;
+  border-radius: 6px;
+  justify-self: center;
+  align-self: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.apiDrink{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: apiDrink;
+  max-width: 50vw;
+  max-height: 120vh;
+  overflow-y:scroll;
+  margin-bottom: 20px;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.navContainer{
+  grid-area: Nav;
+  max-width: 100vw;
+  max-height: 6vh;
 }
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
