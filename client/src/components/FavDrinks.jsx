@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Redirect, withRouter } from 'react-router-dom';
-// import EditDrink from './EditDrink';
-
-// const drinkImg = {
-//   width: "20%"
-// }
-
 
 const drinkContainer ={
   border: "solid 2px black",

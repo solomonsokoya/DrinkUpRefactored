@@ -49,7 +49,7 @@ class DrinksFromApi extends Component{
 
       <div className='apiDrink'>
       {filteredDrinks.map(drinkf =>(
-        <div key = {drinkf.idDrink} style={drinkContainer}>
+        <div className='apiEachDrinkCont' key = {drinkf.idDrink} style={drinkContainer}>
           <img src={drinkf.strDrinkThumb} alt="" style={drinkImg}/>
           <h3>{drinkf.strDrink}</h3>
           <DrinkShow create={this.props.create} id={drinkf.idDrink}/>

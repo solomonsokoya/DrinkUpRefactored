@@ -48,16 +48,12 @@ Now let's go get a drink!
 + HTML
 + CSS
 + Javascript
-+ Javascript
-+ Heroku
 
 #### MIDDLEWARE
 + nodemon
 + pg-promise
 + react-routers
 + PostgresSQL
-+ HTML
-+ CSS
 
 #### API FETCHES
 + Search By Category Alcoholic
@@ -69,6 +65,7 @@ Now let's go get a drink!
 + Lucidchart (tables/flow)
 + Postman (API and DB testing)
 + Slack (communication)
++ Heroku
 
 ## See The Project...
 Live Deployment of App: 
