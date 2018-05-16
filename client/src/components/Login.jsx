@@ -39,7 +39,7 @@ handleSubmit(e) {
       </div>
 
       <div className='loginImage'>
-      <img src= {strawberry} />
+      <img src= {strawberry} alt=''/>
       </div>
 
       <div className= 'loginFormContainer'>
