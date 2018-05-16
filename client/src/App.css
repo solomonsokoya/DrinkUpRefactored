@@ -442,6 +442,14 @@ margin-top: 10px;
   max-height: 120vh;
   overflow-y:scroll;
   margin-bottom: 20px;
+  border: 1pt solid;
+  border-radius: 6px;
+  box-shadow: 0 0 24px 3px rgba(0, 0, 0, .1);
+
+}
+.apiEachDrinkCont {
+  border: 1pt solid;
+  border-radius: 6px;
 }
 .navContainer{
   grid-area: Nav;
