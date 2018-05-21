@@ -235,7 +235,8 @@ class App extends Component {
       View = (
         <div>
         <Switch>
-          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
+          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink}
+                 fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
           <Route path='/drinks' component={() =>(<DrinksApi create = {this.handleCreate} drinks= {this.state.drinkFromApi}/>)}/>
           <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>
         </Switch>
