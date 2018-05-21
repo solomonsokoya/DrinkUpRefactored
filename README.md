@@ -38,6 +38,11 @@ Now let's go get a drink!
 ## TABLES  
 ![](images/tables/tables.png)  
 
+## CODE SNIPPETS
+![](will_go_here)
+![](will_go_here)  
+![](will_go_here)  
+  
 ## TECHNOLOGIES  
 
 #### CORE STACK
