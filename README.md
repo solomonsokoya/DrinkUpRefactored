@@ -41,7 +41,8 @@ Now let's go get a drink!
 ## CODE SNIPPETS
 #### CONDITIONAL RENDERING
   We conditionally rendered our routes based on whether or not a user was logged in.  If a user was NOT logged in then they saw a different component at the home route '/' and were only given options to log in or register.  
-  When a user was logged in then they saw their profile rendered to the home route '/' and had access to full CRUD capabilities.
+  When a user was logged in then they saw their profile rendered to the home route '/' and had access to full CRUD capabilities.  
+  
 ![](images/code_snippets/conditional_rendering.png)
 #### FILTERING DRINKS
   In order to  implement a search bar we needed to create a filter function that took the object of all our drinks and looked for matches with our variable 'searchTerm' and then only rendered Drinks that included our search term.  
