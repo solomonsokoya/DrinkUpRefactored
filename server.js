@@ -18,9 +18,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(authController.receiveToken);
 
-app.get('/', (req, res) => {
-  res.send('Hey Team DrinkUp!');
-})
 
 app.use('/auth', authRouter)
 app.use('/users', usersRouter);
