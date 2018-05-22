@@ -32,27 +32,22 @@ class DrinkShow extends Component{
         image_url: drink.strDrinkThumb
       })
     })
-
   }
 
 componentDidMount(){
   this.fetchInfo()
-
 }
 
 render(){
 
   return(
-
     <div>
     <h4>Ingredients:  {this.state.ingredients}</h4>
     <h4>Instructions:  {this.state.instructions}</h4>
     <button onClick = {()=> this.props.create(this.state)} >Add Fav Drink</button>
     </div>
-
     )
-}
-
+  }
 }
 
 export default DrinkShow
