@@ -14,7 +14,6 @@ class DrinkShow extends Component{
   }
 
   fetchInfo(){
-    console.log('fetching')
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.id}`)
     .then(resp =>{
       return resp.json()
