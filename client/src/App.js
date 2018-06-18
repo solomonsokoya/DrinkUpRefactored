@@ -105,14 +105,14 @@ class App extends Component {
   }
 
  async fetchDrinks(){
-       const promise = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
-      const json = await promise.json()
-    console.log(json)
-
-      this.setState({
+  const promise = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
+  const json = await promise.json();
+  this.setState({
         drinkFromApi: json.drinks
       })
   }
+
+
 
   handleLogin(attempt){
     this.loginRequest(attempt)
@@ -152,7 +152,6 @@ class App extends Component {
     fetch(`/drinks/user/${this.state.currentUser.id}`,{
       headers:{
         'Authorization': `Bearer ${authToken}`,
-
       }
     })
     .then(resp => {
@@ -207,7 +206,7 @@ class App extends Component {
 
   componentDidMount(){
     this.checkToken();
-    this.fetchDrinks();
+    this.fetchDrinks().catch(alert);
   }
 
   render() {
