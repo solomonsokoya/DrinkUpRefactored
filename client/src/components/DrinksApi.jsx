@@ -31,6 +31,7 @@ class DrinksFromApi extends Component{
   }
 
   render(){
+    console.log(this.props.drinks)
     const filteredDrinks = this.props.drinks.filter(drink =>{
       return drink.strDrink.toLocaleLowerCase().includes(this.state.searchTerm.toLocaleLowerCase())
     })
@@ -40,7 +41,7 @@ class DrinksFromApi extends Component{
       <Nav className ='Nav'/>
       <input
       type = 'text'
-      class='input'
+      className='input'
       id = 'input'
       name='searchTerm'
       value ={this.state.searchTerm}

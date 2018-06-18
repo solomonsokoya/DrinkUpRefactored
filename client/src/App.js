@@ -48,7 +48,6 @@ class App extends Component {
         })
       })
       .catch(err => {
-        console.log('not logged in');
         localStorage.removeItem('authToken');
         this.setState({
           currentUser: null
@@ -56,7 +55,7 @@ class App extends Component {
       })
   }
 
-  loginRequest(attempt) {
+ loginRequest(attempt) {
     const authToken = localStorage.getItem('authToken');
     console.log('attempting to log in with attempt:');
     fetch('/auth/login', {
@@ -105,19 +104,14 @@ class App extends Component {
     })
   }
 
-  fetchDrinks(){
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
-    .then(resp =>{
-      return resp.json()
-    })
-    .then(respBody =>{
+ async fetchDrinks(){
+       const promise = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
+      const json = await promise.json()
+    console.log(json)
+
       this.setState({
-        drinkFromApi: respBody.drinks
+        drinkFromApi: json.drinks
       })
-    })
-    .catch(err=>{
-      console.log(err);
-    })
   }
 
   handleLogin(attempt){
