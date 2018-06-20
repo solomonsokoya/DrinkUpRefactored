@@ -13,24 +13,27 @@ class DrinkShow extends Component{
     this.fetchInfo = this.fetchInfo.bind(this);
   }
 
-  fetchInfo(){
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.id}`)
-    .then(resp =>{
-      return resp.json()
-    }).then(respBody =>{
-      const drink = respBody.drinks[0]
-      const ingredients = [];
-      for (const key in drink){
-        if(key.includes('Ingredient') && drink[key])
-        ingredients.push(' ' + drink[key])
+  async fetchInfo(){
+    try{
+      let promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.id}`)
+      let json = await promise.json();
+        const drink = json.drinks[0]
+        const ingredients = [];
+        for (const key in drink){
+          if(key.includes('Ingredient') && drink[key])
+          ingredients.push(' ' + drink[key])
+        }
+        this.setState({
+          ingredients: ingredients.join(),
+          drink_name: drink.strDrink,
+          instructions: drink.strInstructions,
+          image_url: drink.strDrinkThumb
+        })
       }
-      this.setState({
-        ingredients: ingredients.join(),
-        drink_name: drink.strDrink,
-        instructions: drink.strInstructions,
-        image_url: drink.strDrinkThumb
-      })
-    })
+      catch(err){
+        console.log(err)
+      }
+
   }
 
 componentDidMount(){

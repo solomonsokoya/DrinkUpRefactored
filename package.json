@@ -33,5 +33,8 @@
     "nodemon": "^1.17.4",
     "pg-promise": "^8.4.3",
     "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.9.1"
   }
 }
