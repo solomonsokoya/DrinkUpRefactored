@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {Route, Switch } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 import Login from './components/Login';
 import jwt from 'jwt-js';
 import Register from './components/RegisterForm';
@@ -11,20 +11,20 @@ import EditDrink from './components/EditDrink';
 import './App.css';
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       currentUser: null,
       drinks: false,
-      drinkFromApi:[]
+      drinkFromApi: []
     }
     this.handleCreate = this.handleCreate.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
     this.fetchDrinks = this.fetchDrinks.bind(this);
-    this.fetchFavDrinks= this.fetchFavDrinks.bind(this)
-    this.handleEditDrink = this.handleEditDrink.bind(this);  //sends props to editDrink form
-    this.updateDrink = this.updateDrink.bind(this)  // takes new values on Submit
+    this.fetchFavDrinks = this.fetchFavDrinks.bind(this)
+    this.handleEditDrink = this.handleEditDrink.bind(this); //sends props to editDrink form
+    this.updateDrink = this.updateDrink.bind(this) // takes new values on Submit
     this.deleteDrink = this.deleteDrink.bind(this)
   }
 
@@ -37,88 +37,77 @@ class App extends Component {
         'content-type': 'application/json',
         'Authorization': `Bearer ${authToken}`
       }
+    }).then(resp => {
+      if (!resp.ok)
+        throw new Error(resp.message);
+      return resp.json()
+    }).then(respBody => {
+      this.setState({currentUser: respBody.user})
+    }).catch(err => {
+      localStorage.removeItem('authToken');
+      this.setState({currentUser: null});
     })
-      .then(resp => {
-        if (!resp.ok) throw new Error(resp.message);
-        return resp.json()
-      })
-      .then(respBody => {
-        this.setState({
-          currentUser: respBody.user
-        })
-      })
-      .catch(err => {
-        localStorage.removeItem('authToken');
-        this.setState({
-          currentUser: null
-        });
-      })
   }
 
- loginRequest(attempt) {
-    const authToken = localStorage.getItem('authToken');
-    console.log('attempting to log in with attempt:');
-    fetch('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify(attempt),
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      }
-    })
-    .then(resp => {
-        if (!resp.ok) throw new Error(resp.statusMessage);
-        return resp.json();
-      })
-      .then(respBody => {
-        localStorage.setItem('authToken', respBody.token)
-        this.setState({
-          currentUser: jwt.decodeToken(respBody.token).payload
-        })
-        window.location.href = '/';
-      })
-    }
-
-
-  registerRequest(attempt) {
-    const authToken = localStorage.getItem('authToken');
-    console.log('attempting to REGISTER');
-    fetch('/auth/register', {
-      method: 'POST',
-      body: JSON.stringify(attempt),
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      }
-    })
-    .then(resp => {
-      if (!resp.ok) throw new Error(resp.statusMessage);
-      return resp.json();
-    })
-    .then(respBody => {
-      localStorage.setItem('authToken', respBody.token)
+  async loginRequest(attempt) {
+    try {
+      const authToken = localStorage.getItem('authToken');
+      let promise = await fetch('/auth/login', {
+        method: 'POST',
+        body: JSON.stringify(attempt),
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+      let json = await promise.json();
+      localStorage.setItem('authToken', json.token);
       this.setState({
-        currentUser: jwt.decodeToken(respBody.token).payload
+        currentUser: jwt.decodeToken(json.token).payload
       })
       window.location.href = '/';
-    })
+    } catch (err) {
+      console.log(err)
+    }
   }
-
- async fetchDrinks(){
-  const promise = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
-  const json = await promise.json();
-  this.setState({
-        drinkFromApi: json.drinks
+  async registerRequest(attempt) {
+    try {
+      const authToken = localStorage.getItem('authToken');
+      console.log('attempting to REGISTER');
+      let promise = await fetch('/auth/register', {
+        method: 'POST',
+        body: JSON.stringify(attempt),
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        }
+      });
+      let json = await promise.json();
+      localStorage.setItem('authToken', json.token)
+      this.setState({
+        currentUser: jwt.decodeToken(json.token).payload
       })
+      window.location.href = '/';
+    } catch (err) {
+      console.log(err)
+    }
   }
 
+  async fetchDrinks() {
+    try {
+      let promise = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
+      let json = await promise.json();
+      this.setState({drinkFromApi: json.drinks})
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
-
-  handleLogin(attempt){
+  handleLogin(attempt) {
     this.loginRequest(attempt)
   }
 
-  handleCreate(drink){
+  handleCreate(drink) {
     this.appCreateDrinks(drink)
   }
 
@@ -126,7 +115,7 @@ class App extends Component {
     this.registerRequest(attempt);
   }
 
-  appCreateDrinks(drink){
+  appCreateDrinks(drink) {
     const authToken = localStorage.getItem('authToken');
     console.log('i create')
     fetch(`/drinks/user/${this.state.currentUser.id}`, {
@@ -136,41 +125,30 @@ class App extends Component {
         'content-type': 'application/json',
         'Authorization': `Bearer ${authToken}`
       }
-    }).then(resp=>{
-      if(!resp.ok) throw new Error(resp.statusMessage);
+    }).then(resp => {
+      if (!resp.ok)
+        throw new Error(resp.statusMessage);
       return resp.json();
-    }).then(
-      () => this.fetchFavDrinks()
-
-    )
+    }).then(() => this.fetchFavDrinks())
   }
-
-
 
   fetchFavDrinks() {
     const authToken = localStorage.getItem('authToken')
-    fetch(`/drinks/user/${this.state.currentUser.id}`,{
-      headers:{
-        'Authorization': `Bearer ${authToken}`,
+    fetch(`/drinks/user/${this.state.currentUser.id}`, {
+      headers: {
+        'Authorization': `Bearer ${authToken}`
       }
-    })
-    .then(resp => {
-      if(!resp.ok) throw new Error(resp.statusMessage)
-        return resp.json()
-    })
-    .then(respBody =>
-      this.setState ({
-        drinks: respBody.data
-      }))
-    .catch(err => {
+    }).then(resp => {
+      if (!resp.ok)
+        throw new Error(resp.statusMessage)
+      return resp.json()
+    }).then(respBody => this.setState({drinks: respBody.data})).catch(err => {
       console.log('not fetching drinks');
     })
   }
 
   handleEditDrink(drink) {
-    this.setState({
-      drink: drink
-    })
+    this.setState({drink: drink})
   }
 
   updateDrink(drink) {
@@ -183,58 +161,47 @@ class App extends Component {
         'Authorization': `Bearer ${authToken}`
       }
     }).then(resp => {
-      if (!resp.ok) throw new Error(resp.statusMessage);
+      if (!resp.ok)
+        throw new Error(resp.statusMessage);
       return resp.json();
-    }).then(
-      () => this.fetchFavDrinks()
-    )
+    }).then(() => this.fetchFavDrinks())
   }
 
   deleteDrink(drink) {
     console.log(drink)
-    return fetch(`/drinks/drink/${drink.drink_id}`, {
-      method: 'DELETE',
-    })
-    .then(resp => {
-    if (!resp.ok) throw new Error(resp.statusMessage);
+    return fetch(`/drinks/drink/${drink.drink_id}`, {method: 'DELETE'}).then(resp => {
+      if (!resp.ok)
+        throw new Error(resp.statusMessage);
       return resp.json();
-    })
-    .then (
-      () => this.fetchFavDrinks()
-      )
+    }).then(() => this.fetchFavDrinks())
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.checkToken();
-    this.fetchDrinks().catch(alert);
+    this.fetchDrinks();
   }
 
   render() {
     let View;
-    if(this.state.currentUser === null){
-        View = (
-          <div>
-            <main>
-            <Switch>
-              <Route exact path= "/" component= {Home} />
-              <Route path="/login" component={() => (<Login onLogin = {this.handleLogin}/>)}/>
-              <Route path="/register" component={() => (<Register onSubmit = {this.handleRegister}/>)}/>
-            </Switch>
-            </main>
-          </div>
-          )
-      } else {
+    if (this.state.currentUser === null) {
+      View = (<div>
+        <main>
+          <Switch>
+            <Route exact="exact" path="/" component={Home}/>
+            <Route path="/login" component={() => (<Login onLogin={this.handleLogin}/>)}/>
+            <Route path="/register" component={() => (<Register onSubmit={this.handleRegister}/>)}/>
+          </Switch>
+        </main>
+      </div>)
+    } else {
 
-      View = (
-        <div>
+      View = (<div>
         <Switch>
-          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink}
-                 fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
-          <Route path='/drinks' component={() =>(<DrinksApi create = {this.handleCreate} drinks= {this.state.drinkFromApi}/>)}/>
+          <Route exact="exact" path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
+          <Route path='/drinks' component={() => (<DrinksApi create={this.handleCreate} drinks={this.state.drinkFromApi}/>)}/>
           <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>
         </Switch>
-        </div>
-      )
+      </div>)
     };
     return (View);
   }

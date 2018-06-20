@@ -31,7 +31,6 @@ class DrinksFromApi extends Component{
   }
 
   render(){
-    console.log(this.props.drinks)
     const filteredDrinks = this.props.drinks.filter(drink =>{
       return drink.strDrink.toLocaleLowerCase().includes(this.state.searchTerm.toLocaleLowerCase())
     })
