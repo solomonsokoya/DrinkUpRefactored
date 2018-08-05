@@ -71,6 +71,7 @@ class App extends Component {
     }
   }
   async registerRequest(attempt) {
+    console.log(attempt);
     try {
       const authToken = localStorage.getItem('authToken');
       console.log('attempting to REGISTER');
@@ -187,7 +188,7 @@ class App extends Component {
       View = (<div>
         <main>
           <Switch>
-            <Route exact="exact" path="/" component={Home}/>
+            <Route exact path="/" component={Home}/>
             <Route path="/login" component={() => (<Login onLogin={this.handleLogin}/>)}/>
             <Route path="/register" component={() => (<Register onSubmit={this.handleRegister}/>)}/>
           </Switch>

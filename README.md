@@ -1,21 +1,21 @@
 # DrinkUp
 
 ## Overview
-So you realize you are starting to gravitate toward gin cocktails but you have no idea 
+So you realize you are starting to gravitate toward gin cocktails but you have no idea
 what goes in your favorite cocktail, OR maybe you want to try other gin-based cocktails but don't know their official names.  Here is where this app will improve your life.    
-  
+
 Our app is a database of cocktails including names, images ingredients and instructions. A user can go to our website and is given the option to register if they
 don't currently have an account or if they do have an account they can log right in.  
-  
+
 Once they have logged in they can search for cocktails and add a
 cocktail to their "favorites" list.  From their "favorites" they can view all their cocktails, edit a cocktail to create a custom cocktail and delete a cocktail from their favorites.    
-  
+
 Now let's go get a drink!
 
 ## Wireframe
-![](images/wireframe/wireframe_XD1.jpg) 
-![](images/wireframe/wireframe_XD2.jpg) 
-![](images/wireframe/wireframe_XD3.jpg) 
+![](images/wireframe/wireframe_XD1.jpg)
+![](images/wireframe/wireframe_XD2.jpg)
+![](images/wireframe/wireframe_XD3.jpg)
 
 ## Pages/Components
 + Landing Page
@@ -34,7 +34,7 @@ Now let's go get a drink!
     + Nav Bar
     + Edit Drink filled out Form
 
-  
+
 ## TABLES  
 ![](images/tables/tables.png)  
 
@@ -49,12 +49,12 @@ Now let's go get a drink!
 
 ![](images/code_snippets/filter_drinks.png)
 #### HANDLING DRINK INGREDIENTS
-  Our API gave us back a drink object that listed ingredients individually 
-  in up to 15 different key/property combos so we had to take that data and compile it 
+  Our API gave us back a drink object that listed ingredients individually
+  in up to 15 different key/property combos so we had to take that data and compile it
   and concatenate it so that it was just one entry of ingredients in our database.  
-  
+
 ![](images/code_snippets/handle_ingredients.png)
-  
+
 ## TECHNOLOGIES  
 
 #### CORE STACK
@@ -85,5 +85,5 @@ Now let's go get a drink!
 + Heroku
 
 ## See The Project...
-Live Deployment of App: 
-http://LinkWillGoHereXXXXXXXXXX
+Live Deployment of App:
+https://serene-badlands-82486.herokuapp.com/

@@ -12,15 +12,6 @@ return querypromise = db.any(`
   `,id)
 }
 
-//get one favorited drink
-// function getOne(id) {
-//   return querypromise = db.one(`
-//     SELECT *
-//     FROM favorites
-//     WHERE user_id = $1
-//     `, id
-//   )
-// }
 
 //create a favorite drink
 function create(drink) {
