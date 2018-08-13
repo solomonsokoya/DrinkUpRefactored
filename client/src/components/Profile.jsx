@@ -34,20 +34,22 @@ export default class Profile extends Component {
       return (
         <div className='parentProfile'>
           <Nav/>
-          <h1> {this.state.username} </h1>
-
-          <div className='userPicCont'>
-            <img  className='userPic' src={this.state.pic_url} alt="profile-pic" />
-          </div>
-
-          <h2> Favorite Drinks </h2>
-
-          <div className='apiDrink' >
-            {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink} deleteDrink={this.props.deleteDrink}/> : <p>Loading</p> }
-          </div>
-
-          <div className='detailPic'>
-            <img className='detailImg' src= {marg} alt=''/>
+          <div className = 'userInfoContainer'>
+            <div className = 'userInfoChild'>
+              <div className='userPicCont'>
+                <img  className='userPic' src={this.state.pic_url} alt="profile-pic" />
+              </div>
+              <h1> {this.state.username} </h1>
+              <div className='detailPic'>
+                <img className='detailImg' src= {marg} alt=''/>
+              </div>
+            </div>
+            <div className = 'favContent'>  
+              <h2> Favorite Drinks </h2>
+              <div className='apiDrink' >
+                {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink} deleteDrink={this.props.deleteDrink}/> : <p>Loading</p> }
+              </div>
+            </div>
           </div>
         </div>
       )

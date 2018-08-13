@@ -71,10 +71,8 @@ class App extends Component {
     }
   }
   async registerRequest(attempt) {
-    console.log(attempt);
     try {
       const authToken = localStorage.getItem('authToken');
-      console.log('attempting to REGISTER');
       let promise = await fetch('/auth/register', {
         method: 'POST',
         body: JSON.stringify(attempt),
@@ -118,7 +116,6 @@ class App extends Component {
 
   appCreateDrinks(drink) {
     const authToken = localStorage.getItem('authToken');
-    console.log('i create')
     fetch(`/drinks/user/${this.state.currentUser.id}`, {
       method: 'POST',
       body: JSON.stringify(drink),
@@ -169,7 +166,6 @@ class App extends Component {
   }
 
   deleteDrink(drink) {
-    console.log(drink)
     return fetch(`/drinks/drink/${drink.drink_id}`, {method: 'DELETE'}).then(resp => {
       if (!resp.ok)
         throw new Error(resp.statusMessage);
@@ -198,7 +194,7 @@ class App extends Component {
 
       View = (<div>
         <Switch>
-          <Route exact="exact" path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
+          <Route exact path="/" render={props => (<Profile user={this.state} handleEditDrink={this.handleEditDrink} fetchFavDrinks={this.fetchFavDrinks} userDrinks={this.state.drinks} deleteDrink={this.deleteDrink}/>)}/>
           <Route path='/drinks' component={() => (<DrinksApi create={this.handleCreate} drinks={this.state.drinkFromApi}/>)}/>
           <Route path="/edit/:id" component={() => (<EditDrink initialValue={this.state.drink} onSubmit={this.updateDrink}/>)}/>
         </Switch>

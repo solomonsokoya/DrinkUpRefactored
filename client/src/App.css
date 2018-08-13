@@ -373,7 +373,7 @@ margin-top: 10px;
   align-items: center;
   grid-area: apiDrink;
   max-width: 50vw;
-  max-height: 120vh;
+  max-height: 80vh;
   overflow-y:scroll;
   margin-bottom: 20px;
   border: 1pt solid;
@@ -395,4 +395,18 @@ margin-top: 10px;
 
 .drinkImg{
     width: 20%;
+}
+.userInfoContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.favContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80vh;
+}
+h2{
+  text-align: center;
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class FavDrinks extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class FavDrinks extends Component {
       return (this.props.drinks.map(drink => (
         <div key={drink.drink_id} >
           <div className = 'apiEachDrinkCont'>
-          <img className='favDrinkImg' src={drink.image_url} className= 'drinkImg' />
+          <img src={drink.image_url} className= 'drinkImg' alt = 'img' />
             <div className='favDrinkDetails'>
               <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
               <h3>{drink.drink_name}</h3>
