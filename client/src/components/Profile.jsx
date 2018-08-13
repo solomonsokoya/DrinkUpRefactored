@@ -33,34 +33,23 @@ export default class Profile extends Component {
     if(this.state.id){
       return (
         <div className='parentProfile'>
-        <Nav/>
+          <Nav/>
+          <h1> {this.state.username} </h1>
 
-        <div className='userName'>
-        <h1> {this.state.username} </h1>
-        </div>
-        <div className='picAndProps'>
-        <div className='userPicCont'>
-        <img  className='userPic' src={this.state.pic_url} alt="profile-pic" />
-        </div>
+          <div className='userPicCont'>
+            <img  className='userPic' src={this.state.pic_url} alt="profile-pic" />
+          </div>
 
-        <div className='favoriteCont'>
-        <div className='favDrinkTxt'>
-        <h2> Favorite Drinks </h2>
-        </div>
+          <h2> Favorite Drinks </h2>
 
-        <div className='favDrinkPropsCont'>
-        <div className='favDrinkInner'>
-        {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink} deleteDrink={this.props.deleteDrink}/> : <p>Loading</p> }
-        </div>
-        </div>
-        </div>
-        </div>
+          <div className='apiDrink' >
+            {this.props.userDrinks ? <FavDrinks drinks={this.props.userDrinks} handleEditDrink={this.props.handleEditDrink} deleteDrink={this.props.deleteDrink}/> : <p>Loading</p> }
+          </div>
 
-        <div className='detailPic'>
-        <img className='detailImg' src= {marg} alt=''/>
+          <div className='detailPic'>
+            <img className='detailImg' src= {marg} alt=''/>
+          </div>
         </div>
-
-      </div>
       )
     } else {
      return(
@@ -71,4 +60,3 @@ export default class Profile extends Component {
     }
   }
 }
-

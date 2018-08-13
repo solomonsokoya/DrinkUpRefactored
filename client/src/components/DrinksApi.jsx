@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import Nav from './Nav.jsx';
 import DrinkShow from './DrinkShow.jsx';
 
-const drinkImg = {
-  width: "20%"
-}
+
 const drinkContainer = {
   border: "solid 2px black",
   padding: "10px",
@@ -39,7 +37,7 @@ class DrinksFromApi extends Component {
       <div className='apiDrink'>
         {
           filteredDrinks.map(drinkf => (<div className='apiEachDrinkCont' key={drinkf.idDrink} style={drinkContainer}>
-            <img src={drinkf.strDrinkThumb} alt="" style={drinkImg}/>
+            <img src={drinkf.strDrinkThumb} alt="" className = 'drinkImg'/>
             <h3>{drinkf.strDrink}</h3>
             <DrinkShow create={this.props.create} id={drinkf.idDrink}/>
           </div>))

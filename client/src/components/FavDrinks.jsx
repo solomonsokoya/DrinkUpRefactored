@@ -19,40 +19,23 @@ class FavDrinks extends Component {
   render() {
     if(this.props.drinks){
       return (this.props.drinks.map(drink => (
-      <div key={drink.drink_id} >
-        <div className='favDrinkPost'>
-        <img className='favDrinkImg' src={drink.image_url} alt="" />
-
-        <div className='favDrinkDetails'>
-        <div className='editButton'>
-        <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
+        <div key={drink.drink_id} >
+          <div className = 'apiEachDrinkCont'>
+          <img className='favDrinkImg' src={drink.image_url} className= 'drinkImg' />
+            <div className='favDrinkDetails'>
+              <button onClick={() => this.handleEditRoute(drink)}>EDIT DRINK</button>
+              <h3>{drink.drink_name}</h3>
+              <h4>{drink.ingredients}</h4>
+              <h4>{drink.instructions}</h4>
+              <button onClick={() => this.props.deleteDrink(drink)}>DELETE DRINK</button>
+            </div>
+          </div>
         </div>
-
-        <div className='drinkName'>
-        <h3>{drink.drink_name}</h3>
-
-        </div>
-
-        <div className='drinkIngred'>
-        <h4>{drink.ingredients}</h4>
-        </div>
-
-        <div className='drinkInstruc'>
-        <h4>{drink.instructions}</h4>
-        </div>
-
-        <div className='deleteButton'>
-
-        <button onClick={() => this.props.deleteDrink(drink)}>DELETE DRINK</button>
-        </div>
-        </div>
-        </div>
-      </div>
-    )))} else {
+    )))}
+    else {
      return (<p>Loading</p>)
     }
   }
 }
 
 export default withRouter(FavDrinks);
-

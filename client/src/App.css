@@ -12,15 +12,13 @@
 
 /*PROFILE PAGE CSS BEGINS*/
 .parentProfile {
-  overflow: hidden;
+  height: 100vh;
+   width: 100vw;
+
 }
 
 .userName {
-  /*display: flex;
-  justify-content: center;*/
   font-size: 26px;
-  transform: translate(9%, 608%);
-
 }
 
 .userPic {
@@ -33,48 +31,14 @@
 }
 
 .userPicCont {
-  margin: 0 auto;
-  transform: translate(-40%, 20%);
-  justify-content: center;
   width: 210px;
   height: 210px;
-  /*background: pink;*/
-
 }
 
-.favDrinkTxt {
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-}
-
-.favDrinkPropsCont {
-  margin: auto;
-  border: solid 1pt;
-  border-radius: 6px;
-  width: 650px;
-  height: 500px;
-  overflow: scroll;
-  box-shadow: 0 0 24px 3px rgba(0, 0, 0, .1);
-}
-
-.picAndProps {
-  display: flex;
-  margin-top: 50px;
-  /*justify-content: space-around;*/
-
-}
-
-.favoriteCont {
-  transform: translate(-11%, -2%);
-  /*background: pink;*/
-}
 
 .detailPic {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: -1000;
+  width: 50px;
+  height: 50px;
 }
 .favDrinkImg{
   max-width: 200px;
@@ -96,35 +60,12 @@
   border-radius: 3px;
 }
 
-.favDrinkPost {
-  display: flex;
-  margin: auto;
-  border: 1pt solid;
-  width: 500px;
-  height: 200px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-radius: 6px;
-  /*overflow: scroll;*/
-}
 
 .favDrinkDetails {
   padding-left: 10px;
   /*display: flex;*/
 }
 
-.editButton {
-  margin-bottom: 10px;
-}
-
-.deleteButton {
-  margin-top: 10px;
-  /*font-size: 50px;*/
-}
 
 
 /*FAV DRINK PROFILE CSS ends*/
@@ -229,10 +170,6 @@ font-weight: bold;
 /*REGISTER PAGE CSS BEGINS*/
 
 .registerCont {
-  /*display: flex;
-  justify-content: center;*/
-  /*width: 400px;
-  height: 400px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -262,10 +199,7 @@ font-weight: bold;
   opacity: .7;
   position: absolute;
   z-index: -1000;
-  /*box-shadow: inset -1px 2px 33px rgba(0, 0, 0, .3);*/
-  /*box-shadow: 0 0 24px 3px rgba(0, 0, 0, .2);*/
   border-radius: 50px;
-  /*bottom: 0;*/
 }
 
 .regForm {
@@ -448,11 +382,17 @@ margin-top: 10px;
 
 }
 .apiEachDrinkCont {
-  border: 1pt solid;
   border-radius: 6px;
+  border: solid 2px black;
+  padding: 10px;
+  margin: 20px;
 }
 .navContainer{
   grid-area: Nav;
   max-width: 100vw;
   max-height: 6vh;
+}
+
+.drinkImg{
+    width: 20%;
 }
