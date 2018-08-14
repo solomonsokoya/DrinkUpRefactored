@@ -407,9 +407,10 @@ ul{
   justify-content: space-around;
   height: 80vh;
 }
-h2{
+h2, h1{
   text-align: center;
 }
+
 
 @media(max-width: 520px){
 
