@@ -4,11 +4,6 @@
 }
 
 
-/*NAV BAR CSS BEGINS*/
-
-
-/*NAV BAR CSS ENDS*/
-
 
 /*PROFILE PAGE CSS BEGINS*/
 .parentProfile {
@@ -360,7 +355,7 @@ margin-top: 10px;
   font-size: 1.0em;
   text-align: center;
   grid-area: input;
-  width:15vw;
+  width: 200px;
   height: 5vh;
   border-radius: 6px;
   justify-self: center;
@@ -389,10 +384,15 @@ margin-top: 10px;
 }
 .navContainer{
   grid-area: Nav;
-  max-width: 100vw;
-  max-height: 6vh;
-}
+  width: 100vw;
+  height: 6vh;
 
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .drinkImg{
     width: 20%;
 }
@@ -409,4 +409,21 @@ margin-top: 10px;
 }
 h2{
   text-align: center;
+}
+
+@media(max-width: 520px){
+
+  .userInfoContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .detailImg{
+    display: none;
+  }
+  .favContent{
+display: block;
+ }
+ h2{
+   margin-bottom: 10px;
+ }
 }

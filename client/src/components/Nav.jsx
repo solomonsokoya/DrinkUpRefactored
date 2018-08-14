@@ -17,7 +17,6 @@ export default class Nav extends Component {
 
       <nav className = 'navContainer'>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossOrigin="anonymous"/>
-
         <ul>
           <li><Link style={{ textDecoration: 'none', color: 'black' }} to="/"><i className="fas fa-glass-martini"></i></Link></li>
           <li><Link style={{ textDecoration: 'none', color: 'black' }} to="/drinks">FIND DRINKS</Link></li>
@@ -27,4 +26,3 @@ export default class Nav extends Component {
       )
   }
 }
-
