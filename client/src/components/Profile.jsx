@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FavDrinks from './FavDrinks';
 import Nav from './Nav.jsx'
-
 import marg from './cssImages/margarita.jpg'
 
 
