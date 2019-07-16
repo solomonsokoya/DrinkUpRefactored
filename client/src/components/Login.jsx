@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'date-input-polyfill';
 import strawberry from './cssImages/strawberry.jpg';
 
 export default class Login extends Component {
@@ -72,6 +73,7 @@ handleSubmit(e) {
       name='password'
       />
       </label>
+      <input type="date" data-date-format="yyyy/mm/dd"/>
       </div>
 
       <div className='formButton'>
