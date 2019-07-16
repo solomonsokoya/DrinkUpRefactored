@@ -1,0 +1,76 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js update
+
+PATH: 
+  /Users/solomonsokoya/anaconda3/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/Users/solomonsokoya/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/usr/local/mongodb/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.11.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "drinkup",
+    "version": "1.0.0",
+    "description": "## overview So you are starting to notice that you like gin cocktails but you have no idea  what goes in your favorite cocktail, OR maybe you want to try other gin based cocktails but don't know their official names.  Here is where this app will improve your life.",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "dev": "concurrently \"npm run start-server\" \"npm run start-client\"",
+      "start-server": "nodemon server.js",
+      "start-client": "cd client && npm start",
+      "heroku-postbuild": "cd client && npm i && npm run build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sboozy/DrinkUp.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/sboozy/DrinkUp/issues"
+    },
+    "homepage": "https://github.com/sboozy/DrinkUp#readme",
+    "dependencies": {
+      "bcrypt": "^2.0.1",
+      "body-parser": "^1.18.2",
+      "concurrently": "^3.5.1",
+      "date-input-polyfill": "^2.14.0",
+      "express": "^4.16.3",
+      "jquery": "^3.4.1",
+      "jsonwebtoken": "^8.2.1",
+      "jwt-js": "^0.5.0",
+      "morgan": "^1.9.1",
+      "nodemon": "^1.17.4",
+      "pg-promise": "^8.4.3",
+      "react-router-dom": "^4.2.2"
+    },
+    "devDependencies": {
+      "eslint-plugin-react": "^7.9.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command "update" not found.
+      at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:23451:28)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:95:12
+      at runCommand (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87312:22)
+      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87412:14)
