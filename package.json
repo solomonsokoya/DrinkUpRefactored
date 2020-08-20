@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/sboozy/DrinkUp#readme",
   "dependencies": {
-    "bcrypt": "^2.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "date-input-polyfill": "^2.14.0",
